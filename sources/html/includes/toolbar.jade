@@ -1,0 +1,26 @@
+- var classNames = 'toolbar'
+if toolbarClass
+    - classNames += toolbarClass
+div(class="#{classNames}")
+    a.toolbar__logo(href='/')
+        include ../../../public_html/layout/images/svg/logo.svg
+    .toolbar__lang.lang
+        a.lang__link.lang__link--ru.lang__link--active(href='#') RU
+        a.lang__link.lang__link--en(href='#') EN
+        .lang__line
+    if showDropdown
+        .toolbar__dropdown.dropdown
+            a.dropdown__trigger 2016
+            .dropdown__frame
+                a.dropdown__item(href='#') 2015
+                a.dropdown__item(href='#') 2014
+                a.dropdown__item(href='#') 2013
+                
+    .toolbar__contacts
+        a.toolbar__link(href='mailto:info@vzgs.ru') info@vzgs.ru
+        br
+        a.toolbar__link(href='tel:+73478320580') +7 (34783) 2-05-80
+    a.toolbar__nav.nav(href='#')
+        .nav__text Меню
+        .nav__icon
+            include ../../../public_html/layout/images/svg/menu.svg

@@ -1,0 +1,136 @@
+.page
+    min-height: 500px
+    &__hide-with-menu
+        transition .3s opacity .1s
+        will-change opacity
+        .page--open &
+            opacity: 0
+            transition-delay: 0s
+            pointer-events: none
+    &__show-with-menu
+        pointer-events: none
+        visibility: hidden
+        opacity: 0
+        transition: .3s opacity, .3s transform
+        .page--open &
+            pointer-events: all
+            visibility: visible
+            opacity: 1
+            transition-delay: .1s
+
+    &__wrap
+        min-height: 100%
+        position relative
+        z-index: 20
+        background-image url(/layout/images/pattern.png)
+        background-size 2px 2px
+        padding 40px 60px 70px
+        margin-bottom -65px
+        display: flex
+        flex-flow: column
+        justify-content: space-between
+    &__content
+        t opacity
+    &__title
+        text-transform uppercase
+        color white
+        font-weight 900
+        font-family: 'GothamPro'
+        font-size 4vw
+        line-height 1.1
+        margin-bottom 40px
+        max-width: 50%
+        @extend .page__hide-with-menu
+    &__sub-title
+        @extend .page__hide-with-menu
+    &__footer
+        padding 0 60px
+        
+    &__bg
+        position fixed
+        top 0
+        left 0
+        size 100%
+        z-index: 10
+        background-size cover
+        background-position center center
+        -webkit-filter blur(0px)
+        filter blur(0px)
+        transform: scale(1.05)
+        transition .3s filter
+        will-change transform
+        &:after
+            content: ""
+            position absolute
+            size 100%
+            left 0
+            top 0
+            background-color alpha(black, .4)
+    &--services
+        & ^[0]__bg
+            background-image url(/layout/images/bg.services.jpg)
+    &--services
+        & ^[0]__bg
+            background-image url(/layout/images/bg.services.jpg)
+    &--production
+        & ^[0]__bg
+            background-image url(/layout/images/bg.production.jpg)
+        &-detail ^[0]__bg
+            background-image url(/layout/images/bg.production.detail.jpg)
+    &--partners
+        & ^[0]__bg
+            background-image url(/layout/images/bg.partners.jpg)
+    &--news
+        & ^[0]__bg
+            background-image url(/layout/images/bg.news.jpg)
+    &--licenses
+        & ^[0]__bg
+            background-image url(/layout/images/bg.licenses.jpg)
+    &--contacts
+        & ^[0]__bg
+            background-image url(/layout/images/bg.contacts.jpg)
+    &--about
+        & ^[0]__bg
+            background-image url(/layout/images/bg.about.jpg)
+    &--index
+        padding 65px
+        & ^[0]__bg
+            background-image url(/layout/images/bg.index.jpg)
+            &:after
+                background-color alpha(black, .55)
+        & ^[0]__content
+            width 100%
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+        & ^[0]__wrap
+            border 10px solid orange
+            background-color alpha(black, .5)
+            align-items: center
+            margin-bottom 0
+            padding 40px 60px
+        & ^[0]__footer
+            padding: 0
+        & ^[0]__title
+            line-height 1
+            text-align center
+            padding-bottom 10px
+            border-bottom 1px solid alpha(white, .5)
+            margin-top auto
+            width 93%
+            max-width: 1010px
+        & ^[0]__sub-title
+            margin-bottom auto
+            font-weight 300
+            margin-top 5px
+            line-height 1.4
+            font-size 25px
+            max-width: 60%
+            text-align center
+
+    &:not(.page--index)
+        @extend .page__hide-with-menu
+    &--open
+        &^[0]--index ^[0]__bg
+            -webkit-filter blur(10px)
+            filter blur(10px)

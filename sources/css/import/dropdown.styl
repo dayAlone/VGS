@@ -1,0 +1,69 @@
+.dropdown
+
+    height 43px
+    min-width: 127px
+    font-family: 'GothamPro'
+    &__frame
+        position absolute
+        top 100%
+        background-color orange
+        width 100%
+        padding 3px 0px 2px
+        opacity: 0
+        transition: .3s opacity .1s, .3s transform .1s, .3s visibility .1s
+        visibility: hidden
+        z-index: 10
+        transform: translateY(-40px)
+    &__item
+        color white
+        width 100%
+        line-height 2
+        display block
+        font-size 14px
+        padding: 2px 23px 0
+        &:hover
+            background-color alpha(white,.1)
+            color white
+    &__trigger
+        padding 0 20px
+        width 100%
+        line-height 40px
+        height 44px
+        cursor: pointer
+        color black
+        font-size 15px
+        position relative
+        z-index: 20
+        display block
+        border 3px solid orange
+        transition-delay: .3s
+        &:after
+
+            content ""
+            top: 50%
+            left: 100%
+            border: solid transparent
+            content: " "
+            height: 0
+            width: 0
+            position: absolute
+            pointer-events: none
+            border-color: rgba(0, 0, 0, 0)
+            border-top-color: black
+            border-width: 7px
+            transform: translateX(-50%) scaleX(.7)
+            margin-left -17px
+            margin-top -3px
+            transition: .3s border .3s
+    &:hover
+        & ^[0]__trigger
+            color white
+            background-color orange
+            transition-delay: 0s
+            &:after
+                transition-delay: 0s
+                border-top-color: white
+        & ^[0]__frame
+            visibility: visible
+            opacity: 1
+            transform: translateY(0)

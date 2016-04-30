@@ -1,0 +1,76 @@
+.ps-container, .ps-container:hover, .ps-container.ps-in-scrolling
+	> .ps-scrollbar-y-rail
+		right 0px !important
+		background transparent
+		opacity 1
+		border-radius 0
+		width 4px
+		t height
+		.dropdown__frame&
+			background transparent
+		.catalog &
+			@media (max-width: scr_lg)
+				right 7px !important
+		>.ps-scrollbar-y
+			opacity 1
+			t height
+			right 0px
+			width 4px
+			border-radius 0
+			background-color orange !important
+
+.noUi
+	&-horizontal
+		&.noUi
+			&-target
+				position relative
+				z-index 20
+				background transparent
+				box-shadow none
+				border 0
+				height 17px
+				position relative
+				&:after
+					position absolute
+					content ""
+					border-bottom 1px solid blue2
+					width 100%
+					top 8px
+					left 0
+		.noUi
+			&-handle
+				width calc(100% - 18px)
+				border 0
+				background-color red
+				background-image linear-gradient(to top, #820010 0%, #b60017 100%)
+				box-shadow none
+				pointer-events none
+				z-index -1
+				left 10px
+				height 17px
+				top 0px
+				border-radius 0
+				&:before, &:after
+					width 9px
+					top 0
+					height 17px
+					background-color transparent
+					background-image url(/layout/images/corner.png)
+					background-position top left
+					background-size auto 17px
+				&:before
+					left -9px
+				&:after
+					right -9px
+					left auto
+					background-position top right
+
+			&-origin
+				background transparent
+				box-shadow none
+				max-width (100/7)%
+				cursor move
+				border-radius 0
+
+				&:last-of-type
+					display none

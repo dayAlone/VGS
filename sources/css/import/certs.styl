@@ -1,0 +1,36 @@
+.certs
+    display: flex
+    align-content: center
+    justify-content: center
+
+    &__item
+        margin: 0 20px
+        svg
+            max-width: 116px
+            max-height: 53px
+            path
+                fill white
+        &--api svg
+            size 107px 50px
+        &--iso svg
+            size 116px 53px
+        &--rts svg
+            size 52px
+        &--eac svg
+            size 49px
+    &--small
+        svg
+            max-width: 66px
+            max-height: 28px
+            path
+                fill alpha(white, .5)
+        & ^[0]__item
+            margin 0 10px
+            &--api svg
+                size 61px 28px
+            &--iso svg
+                size 66px 30px
+            &--rts svg
+                size 29px
+            &--eac svg
+                size 29px

@@ -1,0 +1,40 @@
+.news
+    &__item
+        display block
+        & + &
+            margin-top 30px
+            padding-top 35px
+            border-top 1px solid alpha(orange, .5)
+        color black
+        a&:hover
+            color orange
+    &__date
+        font-family 'GothamPro'
+        font-size 11px
+        font-weight bold
+        color orange
+        margin-bottom 8px
+    &__title
+        font-size 19px
+        &--big
+            font-size 23px
+    a&__back
+        background transparent
+        text-decoration none
+        font-family: 'GothamPro'
+        font-size 11px
+        text-transform uppercase
+        font-weight bold
+        color black
+        display flex
+        align-items: center
+        &:hover
+            color orange
+        span
+            display inline-block
+            padding-top 3px
+            margin-left 10px
+        svg
+            size 21px 12px
+            path
+                fill orange

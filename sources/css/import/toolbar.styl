@@ -1,0 +1,68 @@
+.toolbar
+    font-family: 'GothamPro'
+    font-weight bold
+    color white
+    display: flex
+    width: 100%
+    align-content: center
+    justify-content: flex-start
+    position relative
+    font-size 13px
+    z-index: 3000
+    &__nav,
+    &__lang,
+    &__contacts
+        align-self: center
+    &__contacts
+        margin-left auto
+        br
+            display none
+    &__nav
+        &-close
+            position absolute
+            right 0
+            top 50%
+            transform: translateY(-50%)
+            @extend .page__show-with-menu
+            svg
+                path
+                    fill orange
+            &:hover
+                path
+                    fill white
+    &__link
+        text-transform uppercase
+        font-weight bold
+        color white
+        margin 0 13px
+        white-space: nowrap
+        @extend .page__hide-with-menu
+        &:hover
+            color orange
+    &__logo
+        position relative
+        top 0px
+        margin-right 60px
+        svg
+            size 123px 75px
+            path
+                fill white
+    &__nav
+        margin-left 40px
+    &__dropdown
+        position absolute
+        left calc(50% + 60px)
+        top 16px
+        z-index: 20
+        @extend .page__hide-with-menu
+    &--black
+        width auto
+        & ^[0]__link
+            color black
+            &:hover
+                color orange
+        & ^[0]__nav
+            color black
+            svg
+                path
+                    fill black

@@ -1,0 +1,15 @@
+- var activeNav = 1
+include includes/header
+<body class='page page--blank page--production'>
+.page__wrap
+    include includes/toolbar
+    include includes/nav
+    .page__content
+        h1.page__title продукция
+        .buttons.buttons--margin.buttons--production
+            a.buttons__item(href='/production-list.html') перфорационные системы orion
+            a.buttons__item(href='/production-list.html') головки стреляющие orion
+            a.buttons__item(href='/production-list.html') вспомогательное оборудование
+            a.buttons__item(href='/production-list.html') заплаты
+.page__bg
+include includes/footer

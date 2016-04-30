@@ -1,0 +1,30 @@
+.lang
+    position relative
+    @extend .page__hide-with-menu
+    &__line
+        size 19px 4px
+        background-color orange !important
+        position absolute
+        bottom -5px
+        t left
+    &__link
+        text-transform uppercase
+        font-weight bold
+        color alpha(white, .5)
+        margin 0 7px
+        &:hover
+            color white
+        &--active
+            color white
+        &--en^[1]--active
+            & ~ ^[0]__line
+                left 41px
+        &--ru^[1]--active
+            & ~ ^[0]__line
+                left 7px
+        &--en:hover
+            & ~ ^[0]__line
+                left 41px
+        &--ru:hover
+            & ~ ^[0]__line
+                left 7px

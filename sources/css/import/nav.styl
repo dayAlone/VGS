@@ -1,0 +1,101 @@
+.nav
+    display: flex
+    align-content: center
+    justify-content: center
+    color white
+    text-transform uppercase
+    font-family: 'GothamPro'
+    &--modal
+        position fixed
+        width 50%
+        z-index: 200
+        right 0
+        top 0
+        height 100%
+        background-color alpha(black, .8)
+        padding: 60px
+        flex-flow: column
+        transform: translateX(100%)
+        will-change transform
+        @extend .page__show-with-menu
+        .page--open &
+            transform: translateX(0)
+        & ^[0]__item
+            font-size 25px
+            margin 10px 0
+    &--index
+        position absolute
+        border-bottom: 1px solid alpha(white, .6)
+        padding-bottom 30px
+        justify-content: space-between
+        @extend .page__show-with-menu
+        & ^[0]__item
+            position relative
+            padding 0 15px
+            font-size 14px
+            &:first-of-type
+                padding-left 0
+            &:last-of-type
+                padding-right 0
+            &:after
+                content: ""
+                opacity: 0
+                t opacity
+                width 100%
+                border-bottom 1px solid orange
+                position absolute
+                bottom -31px
+                left 0
+            &:hover:after
+                opacity: 1
+    &__item
+        font-weight bold
+        text-transform uppercase
+        color white
+
+        &:hover, &--active
+            color orange
+    &__text
+        align-self: center
+        margin-right 15px
+        @extend .page__hide-with-menu
+    &__icon
+        svg
+            path
+                transition: .3s transform, .3s fill, .3s opacity
+                fill: white
+                transform: rotate(0deg)
+                will-change all
+                .page--open &
+                    fill: orange
+                    &:nth-child(2)
+                        transform: rotate(45deg) translateY(-7px)  translateX(6px)
+                        transform-origin: top left
+                    &:nth-child(1)
+                        transform: rotate(-45deg) translateY(7px)  translateX(6px)
+                        transform-origin: bottom left
+                    &:nth-child(3)
+                        opacity: 0
+    &__frame
+        display flex
+        flex-flow: column
+        border 10px solid orange
+        min-height: 80%
+        width 100%
+        padding 50px
+    &__close
+        position absolute
+        top 50px
+        right 55px
+        svg
+            path
+                fill orange
+        &:hover
+            path
+                fill white
+    &:hover, &:focus
+        color orange
+        & ^[0]__icon
+            svg
+                path
+                    fill orange

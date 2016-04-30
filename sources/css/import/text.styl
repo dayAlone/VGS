@@ -1,0 +1,91 @@
+.text
+    color #3a3a3a
+    font-size 15px
+    @media (min-width: scr_lg)
+        font-size 16px
+    h2
+        font-size 40px
+        font-weight 900
+        font-family 'GothamPro'
+    h4
+        text-transform uppercase
+        font-weight bold
+        font-family: 'GothamPro'
+        font-size 18px
+        border-bottom: 5px solid orange
+        padding-bottom 10px
+        margin-bottom 25px
+    h5
+        font-size 15px
+        font-weight bold
+        font-family 'GothamPro'
+        text-transform uppercase
+    p a
+        border-line(alpha(orange,.4))
+        color orange
+    a&__link
+        background transparent
+        color #3a3a3a
+        &:hover
+            border-line(alpha(orange,.4))
+            color orange
+    &__divider
+        border-bottom 1px solid alpha(orange, .3)
+        margin 20px 0 25px
+    p
+        margin-bottom 20px
+        @media (min-width: scr_lg)
+            margin-bottom 25px
+
+    img
+        max-width: 100%
+    &__image
+        &--right
+            margin-left 20px
+            margin-bottom 25px
+            float right
+        &--left
+            margin-right 20px
+            margin-bottom 25px
+            float left
+    &__blockquote
+        text-transform uppercase
+        font-family: 'GothamPro'
+        font-weight bold
+        line-height 1.7
+        font-size 95%
+        padding-top 0px
+        padding-left 25px
+        border-left 5px solid orange
+        display inline-block
+        margin-bottom 25px
+        margin-top 0px
+
+a.button
+    display inline-block
+    border 3px solid orange
+    min-width: 190px
+    text-align center
+    padding 0 20px
+    height 44px
+    line-height 41px
+    margin 5px 0
+    background transparent
+    font-family 'GothamPro'
+    font-weight bold
+    color black
+    font-size 15px
+    text-transform uppercase
+    &:hover
+        background-color orange
+        color white
+    &--small
+        background-color orange
+        color white
+        font-size 13px
+        min-width: 162px
+        height: 39px
+        line-height 36px
+        &:hover
+            color orange
+            background-color white

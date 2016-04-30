@@ -1,0 +1,32 @@
+- var activeNav = 6
+include includes/header
+<body class='page page--contacts'>
+
+.page__wrap
+    include includes/nav
+    - var toolbarClass = ' toolbar--black'
+    include includes/toolbar
+    .page__title О компании
+    .page__content.content
+        .content__scroll.scroll
+            .scroll__wrap
+                .scroll__content
+                    .text
+                        h2 АО «ВЗРЫВГЕОСЕРВИС»
+                        .text__divider
+                        h5 Адрес:
+                        p 452683, Российская Федерация, Республика Башкортостан, г. Нефтекамск, ул. Магистральная 19/4
+                        a.button(href='#') Показать карту
+                        .text__divider
+                        h5 Телефон/факс:
+                        p 
+                            a.text__link(href='#') +7 (34783) 2-05-80
+                        .text__divider
+                        h5 e-mail:
+                        p 
+                            a.text__link(href='#') info@vzgs.ru
+                        a.button(href='#') Отправить сообщение
+                    
+        //.content__footer
+.page__bg
+include includes/footer

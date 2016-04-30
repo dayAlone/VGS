@@ -1,0 +1,30 @@
+- var activeNav = 1
+include includes/header
+<body class='page page--production  page--production-list'>
+
+.page__wrap
+    include includes/nav
+    - var toolbarClass = ' toolbar--black'
+    include includes/toolbar
+    .page__title вспомогательное оборудование
+    .page__content.content
+        .content__scroll.scroll
+            .scroll__wrap
+                .scroll__content
+                    .equipments
+                        - var i = 0
+                        while i < 15
+                            a.equipments__item(href='/production-detail.html')
+                                .equipments__photo(style='background-image:url(/layout/images/item.jpg)')
+                                .equipments__name Приспособление для спуска
+                            a.equipments__item(href='/production-detail.html')
+                                .equipments__photo(style='background-image:url(/layout/images/item.jpg)')
+                                .equipments__name Кабельная головка
+                            a.equipments__item(href='/production-detail.html')
+                                .equipments__photo(style='background-image:url(/layout/images/item.jpg)')
+                                .equipments__name Контейнер безопасности
+                            - i++
+                            
+        //.content__footer
+.page__bg
+include includes/footer

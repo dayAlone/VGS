@@ -1,0 +1,25 @@
+.page__footer.footer
+    .footer__copyright 
+        | © 2016 АО “ВГС”
+        br
+        br
+    .footer__address
+        | Россия, 452683, Республика Башкортостан, <br/> г. Нефтекамск, ул. Магистральная, д. 19
+    .footer__contacts
+        a.footer__link(href='mailto:info@vzgs.ru') info@vzgs.ru
+        br
+        a.footer__link(href='tel:+73478320580') +7 (34783) 2-05-80
+    .footer__map
+        a.footer__link(href='/sitemap/') Карта сайта
+        br
+        br
+    if !hideCerts
+        .footer__certs.certs.certs--small
+            .certs__item.certs__item--api
+                include ../../../public_html/layout/images/svg/cert-1.svg
+            .certs__item.certs__item--iso
+                include ../../../public_html/layout/images/svg/cert-2.svg
+            .certs__item.certs__item--rts
+                include ../../../public_html/layout/images/svg/cert-3.svg
+            .certs__item.certs__item--eac
+                include ../../../public_html/layout/images/svg/cert-4.svg

@@ -1,0 +1,37 @@
+.scroll
+    position relative
+    width 100%
+    display flex
+    flex-direction: column
+    &__wrap
+        max-height: 100%
+        overflow: hidden
+        margin-right -35px
+        position relative
+    &__content
+        padding 40px 35px 40px 0
+    &:after, &:before
+        height 150px
+        z-index 50
+        right 0px
+        width 100%
+        content ""
+        position absolute
+        opacity 0
+        pointer-events: none
+        t opacity
+    &:after
+        background linear-gradient(to top, white 10%, rgba(255,255,255,0) 100%)
+        bottom 0
+    &:before
+        top 0
+        background linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%)
+    &--ready
+        &:after
+            opacity 1
+    &--start
+        &:before
+            opacity 1
+    &--end
+        &:after
+            opacity 0

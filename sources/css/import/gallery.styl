@@ -1,0 +1,19 @@
+.gallery
+    display: flex
+    flex-wrap: wrap;
+    justify-content: flex-start
+    align-items: center;
+    margin-right -15px
+    margin-left -15px
+    a&__item
+        min-height: 75px
+        background-size cover
+        background-position center
+        margin 0 15px 30px
+        flex-basis: calc((100/3)% - 30px)
+        @media (min-width: scr_sm)
+            flex-basis: calc(25% - 30px)
+        @media (min-width: scr_lg)
+            flex-basis: calc(20% - 30px)
+        &:hover
+            box-shadow: inset 0 0 0 3px orange

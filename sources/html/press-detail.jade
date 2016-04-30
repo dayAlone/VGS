@@ -1,0 +1,35 @@
+- var activeNav = 4
+- var showDropdown = true
+include includes/header
+<body class='page page--news page--news-detail'>
+
+.page__wrap
+    include includes/nav
+    - var toolbarClass = ' toolbar--black'
+    include includes/toolbar
+    .page__title пресс-центр
+    .page__content.content
+        .content__scroll.scroll
+            .scroll__wrap
+                .scroll__content
+                    .news
+                        .text.news__item
+                            .news__date 25.03.2016
+                            .news__title.news__title--big Акционерное Общество «Взрывгеосервис» - представляет уникальную разработку, не имеющую аналогов на рынке.
+                            .text__divider
+                            p Акционерное Общество «Взрывгеосервис» - современное высокотехнологичное и наукоемкое предприятие. Производство АО «Взрывгеосервис» расположено в городе Нефтекамске и в городе Стерлитамаке. 
+                            p На предприятии трудится более 50 высококвалифицированных специалистов, 65% из которых имеет высшее образование. Средний возраст сотрудников около 34 лет. Руководство предприятия постоянно совершенствует уровень профессиональной подготовки кадров и стимулирует инновационные проекты. Многие сотрудники, занятые в разработке и производстве сложных инженерных систем, неоднократно проходили обучение за рубежом на ведущих предприятиях отрасли.
+                            .news__gallery.gallery
+                                a.gallery__item(href='#', style='background-image:url(/layout/images/bg.index.jpg)')
+                                a.gallery__item(href='#', style='background-image:url(/layout/images/bg.index.jpg)')
+                                a.gallery__item(href='#', style='background-image:url(/layout/images/bg.index.jpg)')
+                                a.gallery__item(href='#', style='background-image:url(/layout/images/bg.index.jpg)')
+                                a.gallery__item(href='#', style='background-image:url(/layout/images/bg.index.jpg)')
+                            .text__divider.no-margin-top
+                            a.news__back(href='/press.html')
+                                include ../../public_html/layout/images/svg/back.svg
+                                span назад к списку новостей
+                        
+        //.content__footer
+.page__bg
+include includes/footer

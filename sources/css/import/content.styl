@@ -1,0 +1,30 @@
+.content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    color black
+    font-weight 300
+    font-size 17px
+    padding 140px 60px 20px
+    flex-grow: column
+    background-color white
+    position absolute
+    width 50%
+    top 0
+    right 0
+    height 100%
+    z-index: 30
+    display: flex
+    @extend .page__hide-with-menu
+    &__scroll
+        position relative
+        flex 1
+        border-top: 1px solid #dadada
+    &__footer
+        width 100%
+        min-height: 80px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        & ~ ^[0]:after
+            bottom 80px

@@ -1,0 +1,30 @@
+- var activeNav = 4
+- var showDropdown = true
+include includes/header
+<body class='page page--news'>
+
+.page__wrap
+    include includes/nav
+    - var toolbarClass = ' toolbar--black'
+    include includes/toolbar
+    .page__title пресс-центр
+    .page__content.content
+        .content__scroll.scroll
+            .scroll__wrap
+                .scroll__content
+                    .news
+                        - var x = 0
+                        while x < 3
+                            a.news__item(href='/press-detail.html')
+                                .news__date 25.03.2016
+                                .news__title Акционерное Общество «Взрывгеосервис» - представляет уникальную разработку, не имеющую аналогов на рынке.
+                            a.news__item(href='/press-detail.html')
+                                .news__date 25.03.2016
+                                .news__title Система менеджмента предприятия АО «Взрывгеосервис» проверена независимой экспертной организацией «Bureau Veritas», акредитованный ANAB (ANSI-ASQ National Accreditation Board)
+                            a.news__item(href='/press-detail.html')
+                                .news__date 25.03.2016
+                                .news__title Высокий уровень организации производства позволил компании АО «Взрывгеосервис» первой стать дистрибьютером продукции известной зарубежной фирмы «Owen Oil Tools»
+                            - x++
+        //.content__footer
+.page__bg
+include includes/footer

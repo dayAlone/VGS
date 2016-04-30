@@ -1,0 +1,25 @@
+- var activeNav = 5
+include includes/header
+<body class='page page--partners'>
+
+.page__wrap
+    include includes/nav
+    - var toolbarClass = ' toolbar--black'
+    include includes/toolbar
+    .page__title Партнеры
+    .page__content.content
+        .content__scroll.scroll
+            .scroll__wrap
+                .scroll__content
+                    .text
+                        p Акционерное Общество «Взрывгеосервис» - сотрудничает с ведущими международными и российскими нефте- и газодобывающими команиями. 
+                    .partners
+                        - var n = 0
+                        while n < 16
+                            - id = n < 4 || n > 7 && n < 12 ? 4 - (n % 4) : (n % 4) + 1
+                            .partners__item
+                                img.partners__image(src="/layout/images/p-#{id}.jpg")
+                                - n++
+        //.content__footer
+.page__bg
+include includes/footer

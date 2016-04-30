@@ -1,0 +1,50 @@
+.buttons
+    min-height: 40px
+    display flex
+    justify-content: space-around
+    margin-right -10px
+    margin-left -10px
+    &--margin
+        margin 25px -10px 100px
+    &__item
+        flex 1
+        color #e3e9ed
+        text-transform uppercase
+        font-family: 'GothamPro'
+        border 10px solid orange
+        background-color black
+        margin 0 10px
+        font-size 23px
+        line-height 1.2
+        padding 25px 30px 22px
+        display flex
+        align-items: center
+        &:hover
+            color white
+            background-color alpha(black, .4)
+    &:not(^[0]--small)
+        @extend .page__hide-with-menu
+    &--production
+        & ^[0]__item
+            &:last-of-type
+                flex-grow: .45
+    &--small
+        justify-content: space-around
+        width 100%
+        max-width: 1024px
+        align-items: stretch
+        & ^[0]__item
+            flex initial
+            flex-grow: 1
+            justify-content: center
+            text-align center
+            background-color transparent
+            
+            margin 0 7px
+            border 1px solid orange
+            padding 14px 20px 10px
+            font-size 15px
+            font-weight bold
+            &:hover
+                color white
+                background-color orange

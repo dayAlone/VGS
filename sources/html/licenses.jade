@@ -1,0 +1,25 @@
+- var activeNav = 3
+include includes/header
+<body class='page page--licenses'>
+
+.page__wrap
+    include includes/nav
+    - var toolbarClass = ' toolbar--black'
+    include includes/toolbar
+    .page__title лицензии и&nbsp;сертификаты
+    .page__content.content
+        .content__scroll.scroll
+            .scroll__wrap
+                .scroll__content
+                    .text
+                        h4 Разрешения на применение
+                        .licenses
+                            - var i = 0
+                            while i < 10
+                                a.licenses__item(href='#')
+                                    .licenses__image(style='background-image: url(/layout/images/licence-1.jpg)')
+                                    .licenses__title Разрешение на применение перфораторов кумулятивных ПК50КЛ ORION в комплекте с зарядами кумулятивными ORION 50-02 и ORION 50-03;
+                                - i++
+        //.content__footer
+.page__bg
+include includes/footer
