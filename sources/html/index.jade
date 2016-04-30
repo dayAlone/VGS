@@ -1,16 +1,19 @@
 include includes/header
 <body class='page page--index'>
 - var showClose = true
+- var fullWidthFooter = true
+- var darkFooter = true
 
+- var showRadia = true
 .page__wrap
     include includes/toolbar
     .page__content
         - var navType = 'index'
         include includes/nav
-        h1.page__title
+        h1.page__title.page__title--index
             | взрывгеосервис
         h4.page__sub-title
-            | Эксперт в производстве перфорационных систем и&nbsp;прострелочно-взрывного оборудования
+            | Эксперт в производстве перфорационных систем<br/> и&nbsp;прострелочно-взрывного оборудования
     .buttons.buttons--small
         a.buttons__item(href='/production-list.html') 
             span.buttons__text Перфорационные<br/>системы ORION
@@ -30,23 +33,4 @@ include includes/header
         .certs__item.certs__item--eac
             include ../../public_html/layout/images/svg/cert-4.svg
 .page__bg
-.page__footer.footer.footer--dark
-    .footer__copyright 
-        | © 2016 АО “ВГС”
-        br
-        br
-    .footer__address
-        | Россия, 452683, Республика Башкортостан, <br/> г. Нефтекамск, ул. Магистральная, д. 19
-    .footer__contacts
-        a.footer__link(href='mailto:info@vzgs.ru') info@vzgs.ru
-        br
-        a.footer__link(href='tel:+73478320580') +7 (34783) 2-05-80
-    .footer__map
-        a.footer__link(href='/sitemap/') Карта сайта
-        br
-        br
-    a.footer__radia.radia(href="http://radia.ru", target="_blank")
-        .radia__logo
-            include ../../public_html/layout/images/svg/radia.svg
-        .radia__text
-            | Разработка сайта<br/>RADIA Interactive
+include includes/footer

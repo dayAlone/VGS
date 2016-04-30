@@ -89,3 +89,27 @@ a.button
         &:hover
             color orange
             background-color white
+
+.file
+    display: inline-flex
+    max-width: 32%
+    align-items: flex-start
+    color #25282e
+    margin-right 10px
+    &:hover
+        color orange
+    svg
+        min-width: 22px
+        margin-right 10px
+        path
+            fill orange
+    &__name
+        display: inline
+        font-size 11px
+        text-transform uppercase
+        font-family: 'GothamPro'
+        font-weight bold
+        span
+            border-line(alpha(#25282e, .5))
+            ^[0]:hover &
+                border-line(alpha(orange, .5))

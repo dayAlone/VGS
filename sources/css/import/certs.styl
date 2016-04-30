@@ -4,20 +4,38 @@
     justify-content: center
 
     &__item
-        margin: 0 20px
+        margin 0 10px
+        @media (min-width: scr_sm)
+            margin: 0 20px
         svg
             max-width: 116px
             max-height: 53px
             path
                 fill white
         &--api svg
-            size 107px 50px
+            size 61px 28px
+            @media (min-width: scr_sm)
+                size 97px 40px
+            @media (min-width: scr_md)
+                size 107px 50px
         &--iso svg
-            size 116px 53px
+            size 66px 30px
+            @media (min-width: scr_sm)
+                size 106px 43px
+            @media (min-width: scr_md)
+                size 116px 53px
         &--rts svg
-            size 52px
+            size 29px
+            @media (min-width: scr_sm)
+                size 42px
+            @media (min-width: scr_md)
+                size 52px
         &--eac svg
-            size 49px
+            size 29px
+            @media (min-width: scr_sm)
+                size 39px
+            @media (min-width: scr_md)
+                size 49px
     &--small
         svg
             max-width: 66px

@@ -4,17 +4,39 @@
     font-size 11px
     height: 65px
     display: flex
-    justify-content: flex-start
+
     align-items: center
     font-weight 400
     color alpha(white, .5)
+    max-width: 55%
+    justify-content: space-between
+    @media (min-width: scr_xs)
+        justify-content: flex-start
+    &__copyright
+        min-width: 50px
     &__address,
     &__contacts,
     &__copyright
         padding-right 40px
+        br
+            display none
+            @media (min-width: scr_md)
+                display block
+    &__address
+        display none
+        @media (min-width: scr_xs)
+            display block
+    &__map
+        display none
+        @media (min-width: scr_md)
+            display block
     &__certs,
     &__radia
         margin-left auto
+        color alpha(white, .5)
+        display none
+        @media (min-width: scr_md)
+            display flex
     &__certs
         @extend .page__hide-with-menu
     &__link
@@ -24,14 +46,20 @@
 
     &--dark
         color dark_blue
+        & ^[0]__radia
+            color dark_blue
+            svg
+                path
+                    fill dark_blue
         & ^[0]__link
             color dark_blue
             &:hover
                 color orange
-
+    &--fullwidth
+        max-width: none
 .radia
-    color alpha(white, .5)
-    display flex
+
+
     align-content: center
     &__logo
         margin-right 10px

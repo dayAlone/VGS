@@ -5,6 +5,7 @@
     color white
     text-transform uppercase
     font-family: 'GothamPro'
+
     &--modal
         position fixed
         width 50%
@@ -25,29 +26,46 @@
             margin 10px 0
     &--index
         position absolute
-        border-bottom: 1px solid alpha(white, .6)
-        padding-bottom 30px
-        justify-content: space-between
+        left 50%
+        transform: translateX(-50%)
+        justify-content: center
+        flex-wrap: wrap
+        width: 100%
+
+        max-height: 40px
+        max-width: 1020px
+        margin-top 20px
+        @media (min-width: scr_md)
+            padding 0 60px
+        @media (min-width: scr_lg)
+            padding 0
+            max-height: none
+            justify-content: space-between
+            flex-wrap: nowrap
         @extend .page__show-with-menu
+        &:after
+            @media (min-width: scr_md)
+                content ""
+                position absolute
+                border-bottom: 1px solid alpha(white, .6)
+                width 100%
+                left 0
+                bottom calc(50% + 10px)
+            @media (min-width: scr_lg)
+                bottom -11px
         & ^[0]__item
             position relative
-            padding 0 15px
-            font-size 14px
+
+            margin-bottom 20px
+            font-size 13px
+            padding 0 10px
+            @media (min-width: scr_md)
+                font-size 14px
+                padding 0 15px
             &:first-of-type
                 padding-left 0
             &:last-of-type
                 padding-right 0
-            &:after
-                content: ""
-                opacity: 0
-                t opacity
-                width 100%
-                border-bottom 1px solid orange
-                position absolute
-                bottom -31px
-                left 0
-            &:hover:after
-                opacity: 1
     &__item
         font-weight bold
         text-transform uppercase
@@ -59,8 +77,16 @@
         align-self: center
         margin-right 15px
         @extend .page__hide-with-menu
+        display none
+        @media (min-width: scr_md)
+            display block
     &__icon
         svg
+            max-width: 30px
+            @media (min-width: scr_sm)
+                max-width: 40px
+            @media (min-width: scr_md)
+                max-width: 50px
             path
                 transition: .3s transform, .3s fill, .3s opacity
                 fill: white
