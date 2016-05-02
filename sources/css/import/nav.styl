@@ -8,33 +8,52 @@
 
     &--modal
         position fixed
-        width 50%
+        width 100%
         z-index: 200
         right 0
         top 0
         height 100%
         background-color alpha(black, .8)
-        padding: 60px
         flex-flow: column
         transform: translateX(100%)
         will-change transform
+        align-items: center
         @extend .page__show-with-menu
+        padding: 100px 20px 30px
+        text-align center
+        @media (min-width: scr_lg)
+            text-align left
+            padding: 60px 30px
+            width 50%
+            padding: 60px
+        & ^[0]__item
+            font-size 18px
+            @media (min-width: scr_sm)
+                font-size 30px
+            @media (min-width: scr_lg)
+                font-size 25px
+            margin 10px 0
         .page--open &
             transform: translateX(0)
-        & ^[0]__item
-            font-size 25px
-            margin 10px 0
     &--index
         position absolute
         left 50%
-        transform: translateX(-50%)
-        justify-content: center
-        flex-wrap: wrap
-        width: 100%
 
-        max-height: 40px
-        max-width: 1020px
-        margin-top 20px
+        justify-content: center
+
+        width: 100%
+        flex-flow: column
+        align-items: center;
+        top 20px
+        transform: translateX(-50%)
+        @media (min-width: scr_sm)
+            flex-flow: row
+            flex-wrap: wrap
+            max-height: 40px
+            max-width: 1020px
+            margin-top 20px
+            top 0
+            align-items: flex-start
         @media (min-width: scr_md)
             padding 0 60px
         @media (min-width: scr_lg)
@@ -55,17 +74,19 @@
                 bottom -11px
         & ^[0]__item
             position relative
-
             margin-bottom 20px
-            font-size 13px
-            padding 0 10px
+            font-size 15px
+            @media (min-width: scr_sm)
+                padding 0 10px
+                font-size 13px
+                &:first-of-type
+                    padding-left 0
+                &:last-of-type
+                    padding-right 0
             @media (min-width: scr_md)
                 font-size 14px
                 padding 0 15px
-            &:first-of-type
-                padding-left 0
-            &:last-of-type
-                padding-right 0
+
     &__item
         font-weight bold
         text-transform uppercase
@@ -106,9 +127,12 @@
         display flex
         flex-flow: column
         border 10px solid orange
-        min-height: 80%
+        min-height: 90%
         width 100%
-        padding 50px
+        padding 20px 30px
+        @media (min-width: scr_sm)
+            padding 50px
+            min-height: 80%
     &__close
         position absolute
         top 50px

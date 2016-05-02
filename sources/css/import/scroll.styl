@@ -4,34 +4,44 @@
     display flex
     flex-direction: column
     &__wrap
-        max-height: 100%
-        overflow: hidden
-        margin-right -35px
-        position relative
+        @media (min-width: scr_sm)
+            max-height: 100%
+            overflow: hidden
+            margin-right -15px
+            position relative
+            .mobile &
+                overflow: auto
+                -webkit-overflow-scrolling: touch
+        @media (min-width: scr_lg)
+            margin-right -35px
     &__content
-        padding 40px 35px 40px 0
-    &:after, &:before
-        height 150px
-        z-index 50
-        right 0px
-        width 100%
-        content ""
-        position absolute
-        opacity 0
-        pointer-events: none
-        t opacity
-    &:after
-        background linear-gradient(to top, white 10%, rgba(255,255,255,0) 100%)
-        bottom 0
-    &:before
-        top 0
-        background linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%)
-    &--ready
-        &:after
-            opacity 1
-    &--start
-        &:before
-            opacity 1
-    &--end
-        &:after
+        @media (min-width: scr_sm)
+            padding 15px 25px 15px 0
+        @media (min-width: scr_lg)
+            padding 40px 35px 40px 0
+    @media (min-width: scr_sm)
+        &:after, &:before
+            height 150px
+            z-index 50
+            right 0px
+            width 100%
+            content ""
+            position absolute
             opacity 0
+            pointer-events: none
+            t opacity
+        &:after
+            background linear-gradient(to top, white 10%, rgba(255,255,255,0) 100%)
+            bottom 0
+        &:before
+            top 0
+            background linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%)
+        &--ready
+            &:after
+                opacity 1
+        &--start
+            &:before
+                opacity 1
+        &--end
+            &:after
+                opacity 0

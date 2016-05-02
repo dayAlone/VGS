@@ -5,29 +5,35 @@
     color black
     font-weight 300
     font-size 17px
-    padding 140px 60px 20px
-    flex-grow: column
     background-color white
-    position absolute
-    width 50%
-    top 0
-    right 0
-    height 100%
     z-index: 30
-    display: flex
-    @extend .page__hide-with-menu
+    @extend .page__hide-with-menu-desktop
+
+    @media (min-width: scr_lg)
+
+        position absolute
+        width 50%
+        top 0
+        right 0
+        height 100%
     &__scroll
         position relative
         flex 1
-        border-top: 1px solid #dadada
+        @media (min-width: scr_lg)
+            border-top: 1px solid #dadada
     &__footer
         width 100%
         padding 10px 0 5px
         min-height: 40px
         display: flex
-        justify-content: space-between
+        justify-content: flex-start
         align-items: flex-start
+        flex-flow: column
+        @media (min-width: 550px)
+            flex-flow: row
+            justify-content: space-between
         & ~ ^[0]:after
             bottom 80px
         .button
-            margin-left auto
+            @media (min-width: 550px)
+                margin-left auto

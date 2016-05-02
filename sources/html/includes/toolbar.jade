@@ -1,4 +1,4 @@
-- var classNames = 'toolbar'
+- var classNames = 'page__toolbar toolbar'
 if toolbarClass
     - classNames += toolbarClass
 div(class="#{classNames}")
@@ -9,7 +9,7 @@ div(class="#{classNames}")
         a.lang__link.lang__link--en(href='#') EN
         .lang__line
     if showDropdown
-        .toolbar__dropdown.dropdown
+        .toolbar__dropdown.dropdown.visible-lg
             a.dropdown__trigger 2016
             .dropdown__frame
                 a.dropdown__item(href='#') 2015

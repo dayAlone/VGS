@@ -7,6 +7,24 @@
             opacity: 0
             transition-delay: 0s
             pointer-events: none
+    &__hide-with-menu-mobile
+        @media (max-width: scr_sm - 1)
+            transition .3s opacity .1s
+            will-change opacity
+            .page--open &
+                opacity: 0
+                transition-delay: 0s
+                pointer-events: none
+    &__hide-with-menu-desktop
+        transition .3s opacity, .3s filter
+        .page--open &
+            transition-delay: .3s
+            filter: blur(6px)
+        @media (min-width: scr_lg)
+            .page--open &
+                opacity: 0
+                transition-delay: 0s
+                pointer-events: none
     &__show-with-menu
         pointer-events: none
         visibility: hidden
@@ -17,43 +35,72 @@
             visibility: visible
             opacity: 1
             transition-delay: .1s
-
     &__wrap
-        height: 100%
+
         position relative
         z-index: 20
-        background-image url(/layout/images/pattern.png)
-        background-size 2px 2px
-        padding 40px 60px 70px
-        margin-bottom -65px
+        margin-bottom -50px
         display: flex
         flex-flow: column
         justify-content: space-between
-
+        padding 25px 25px 20px
+        @media (min-width: scr_sm)
+            padding 50px 30px 50px
+            height: 100%;
+        @media (min-width: scr_lg)
+            padding 40px 60px 70px
+            margin-bottom -65px
     &__content
         t opacity
         position relative
+        margin-right -25px
+        margin-left -25px
+        padding 30px 30px
+
+        @media (min-width: scr_sm)
+            height: 100%
+            margin-right -30px
+            margin-left -30px
+            padding 20px 30px 0
+        @media (min-width: scr_lg)
+            padding 140px 60px 20px
+            margin 0
     &__title
+        @extend .page__hide-with-menu-desktop
         text-transform uppercase
         color white
         font-weight 900
         font-family: 'GothamPro'
-        font-size 4vw
         line-height 1.1
-        margin-bottom 40px
-        max-width: 50%
-        @extend .page__hide-with-menu
+        margin-bottom 15px
+        text-align center
 
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size 7.5vw
+        min-height: 100px
+        @media (min-width: 480px)
+            min-height: 130px
+        @media (min-width: scr_sm)
+            font-size 57px
+        @media (min-width: scr_lg)
+            justify-content: flex-start
+            min-height: none
+            text-align left
+            max-width: 50%
+            font-size 4vw
     &__sub-title
         @extend .page__hide-with-menu
     &__footer
-        padding 0 60px
-
+        padding 0 30px
+        @media (min-width: scr_lg)
+            padding 0 60px
     &__bg
         position fixed
         top 0
         left 0
-        size 100%
+
         z-index: 10
         background-size cover
         background-position center center
@@ -62,6 +109,19 @@
         transform: scale(1.05)
         transition .3s filter
         will-change transform
+        size 100% 200px
+        @media (min-width: 480px)
+            size 100% 265px
+        @media (min-width: scr_lg)
+            size 100%
+        &:before
+            content: ""
+            position absolute
+            size 100%
+            left 0
+            top 0
+            background-image url(/layout/images/pattern.png)
+            background-size 2px 2px
         &:after
             content: ""
             position absolute
@@ -105,32 +165,44 @@
             padding 65px
         & ^[0]__bg
             background-image url(/layout/images/bg.index.jpg)
+            height: 100%
             &:after
                 background-color alpha(black, .55)
+            &:before
+                display none
+        & ^[0]__toolbar
+            margin-bottom 0
         & ^[0]__content
             width 100%
             display: flex
             flex-wrap: wrap
             justify-content: center
+            padding 0
+            @media (min-width: scr_sm)
+                height auto
         & ^[0]__wrap
             border 10px solid orange
             background-color alpha(black, .5)
             align-items: center
             margin-bottom 0
             padding 15px
-            min-height 100%
-            max-height calc(100% - 20px)
+            height calc(100% - 35px)
+            background-image url(/layout/images/pattern.png)
+            background-size 2px 2px
             @media (min-width: scr_xs)
                 padding 20px
             @media (min-width: scr_sm)
                 padding 40px 30px
                 min-height: 550px
+                height calc(100% - 10px)
             @media (min-width: scr_md)
                 max-height: none
+                height 100%
                 padding 40px 60px
         & ^[0]__footer
             padding: 0
         & ^[0]__title
+            @extend .page__hide-with-menu
             line-height 1
             text-align center
             padding-bottom 10px
@@ -140,6 +212,8 @@
             margin-bottom 5px
             max-width: 1010px
             font-size: 7.1vw
+            min-height: 0
+            justify-content: center
             @media (min-width: scr_sm)
                 font-size: 52px
             @media (min-width: scr_md)
@@ -164,7 +238,39 @@
                     display block
     &:not(.page--index)
         @extend .page__hide-with-menu
+    &--blank
+        min-height: 600px
+        @media (min-width: scr_lg)
+            min-height: 500px
+        & ^[0]__title
+            min-height: 0
+            max-width: none
+            @media (min-width: scr_md)
+                font-size 80px
+                justify-content: flex-start
+            @media (min-width: scr_lg)
+                font-size 78px
+        & ^[0]__bg, & ^[0]__wrap
+            height 100%
+        & ^[0]__content
+            padding-top 0
+            @media (min-width: scr_sm)
+                height auto
+            @media (min-width: scr_lg)
+                padding 0
+        & ^[0]__footer
+            color alpha(white, .5)
+            a
+                color alpha(white, .5)
+                &:hover
+                    color orange
     &--open
+        position fixed
+        &^[0]--index ^[0]__title
+            opacity: 0
+            transition-delay: 0s
+            filter none
+            pointer-events: none
         &^[0]--index ^[0]__bg
             -webkit-filter blur(10px)
             filter blur(10px)

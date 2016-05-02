@@ -1,12 +1,19 @@
 .text
     color #3a3a3a
-    font-size 15px
+    font-size 14px
+    padding-bottom 20px
+    @media (min-width: scr_sm)
+        font-size 15px
+        padding-bottom 0
     @media (min-width: scr_lg)
         font-size 16px
     h2
-        font-size 40px
+
         font-weight 900
         font-family 'GothamPro'
+        font-size 23px
+        @media (min-width: scr_sm)
+            font-size 40px
     h4
         text-transform uppercase
         font-weight bold
@@ -92,10 +99,13 @@ a.button
 
 .file
     display: inline-flex
-    max-width: 32%
     align-items: flex-start
     color #25282e
     margin-right 10px
+    margin-bottom 20px
+    @media (min-width: 550px)
+        margin-bottom 0
+        max-width: 32%
     &:hover
         color orange
     svg

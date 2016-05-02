@@ -17,16 +17,15 @@ div(class='#{c}')
         a.footer__link(href='/sitemap/') Карта сайта
         br
         br
-    if showCerts
-        .footer__certs.certs.certs--small
-            .certs__item.certs__item--api
-                include ../../../public_html/layout/images/svg/cert-1.svg
-            .certs__item.certs__item--iso
-                include ../../../public_html/layout/images/svg/cert-2.svg
-            .certs__item.certs__item--rts
-                include ../../../public_html/layout/images/svg/cert-3.svg
-            .certs__item.certs__item--eac
-                include ../../../public_html/layout/images/svg/cert-4.svg
+    .footer__certs.certs.certs--small
+        .certs__item.certs__item--api
+            include ../../../public_html/layout/images/svg/cert-1.svg
+        .certs__item.certs__item--iso
+            include ../../../public_html/layout/images/svg/cert-2.svg
+        .certs__item.certs__item--rts
+            include ../../../public_html/layout/images/svg/cert-3.svg
+        .certs__item.certs__item--eac
+            include ../../../public_html/layout/images/svg/cert-4.svg
     if showRadia
         a.footer__radia.radia(href="http://radia.ru", target="_blank")
             .radia__logo

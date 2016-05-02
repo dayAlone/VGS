@@ -29,13 +29,18 @@ delay = (ms, func) -> setTimeout func, ms
 end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'
 
 calculateLayout = ->
-	$('.scroll').mod 'ready', $('.scroll__content').height() > $('.scroll__wrap').height()
+	if $.browser.mobile
+		$('html').addClass 'mobile'
+	else
+		$('html').removeClass 'mobile'
 
-	if $('.scroll__content').height() > $('.scroll__wrap').height()
-		if $('.scroll__wrap[data-perfect-scrollbar]').length > 0
-			$('.scroll__wrap[data-perfect-scrollbar]').perfectScrollbar 'update'
-		else
-			$('.scroll__wrap').perfectScrollbar({suppressScrollX: true, includePadding: true})
+	$('.scroll').mod 'ready', $('.scroll__content').height() > $('.scroll__wrap').height()
+	if $(window).width() >= 768 && !$.browser.mobile
+		if $('.scroll__content').height() > $('.scroll__wrap').height()
+			if $('.scroll__wrap[data-perfect-scrollbar]').length > 0
+				$('.scroll__wrap[data-perfect-scrollbar]').perfectScrollbar 'update'
+			else
+				$('.scroll__wrap').perfectScrollbar({suppressScrollX: true, includePadding: true})
 
 @checkScroll = ()->
 	el = $(this).elem('content')

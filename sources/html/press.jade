@@ -13,6 +13,13 @@ include includes/header
             .scroll__wrap
                 .scroll__content
                     .news
+                        .news__dropdown.dropdown.hidden-lg
+                            a.dropdown__trigger 2016
+                            .dropdown__frame
+                                a.dropdown__item(href='#') 2015
+                                a.dropdown__item(href='#') 2014
+                                a.dropdown__item(href='#') 2013
+                        .text__divider.hidden-lg
                         - var x = 0
                         while x < 3
                             a.news__item(href='/press-detail.html')

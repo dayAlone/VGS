@@ -2,45 +2,65 @@
     position relative
     z-index: 25
     font-size 11px
-    height: 65px
-    display: flex
 
+    display: flex
     align-items: center
     font-weight 400
     color alpha(white, .5)
-    max-width: 55%
     justify-content: space-between
+    color alpha(dark_blue, .5)
+    height: 50px
+    
     @media (min-width: scr_xs)
         justify-content: flex-start
+    @media (min-width: scr_lg)
+        height: 65px
+        max-width: 55%
+        color alpha(white, .5)
     &__copyright
         min-width: 50px
     &__address,
     &__contacts,
     &__copyright
-        padding-right 40px
-        br
-            display none
-            @media (min-width: scr_md)
-                display block
+        padding-right 25px
+        @media (min-width: scr_lg)
+            padding-right 40px
+
     &__address
         display none
-        @media (min-width: scr_xs)
+        @media (min-width: 570px)
             display block
+        @media (min-width: scr_lg)
+            display none
+        @media (min-width: 1340px)
+            display block
+
     &__map
         display none
-        @media (min-width: scr_md)
+        @media (min-width: 640px)
             display block
     &__certs,
     &__radia
         margin-left auto
         color alpha(white, .5)
         display none
+        svg path
+            fill alpha(dark_blue, .5)
         @media (min-width: scr_md)
             display flex
+        @media (min-width: scr_lg)
+            svg path
+                fill alpha(white, .5)
     &__certs
         @extend .page__hide-with-menu
+        @media (min-width: scr_md)
+            display flex
+        @media (min-width: scr_lg)
+            display none
     &__link
-        color alpha(white, .5)
+        color alpha(dark_blue, .5)
+        @media (min-width: scr_lg)
+            color alpha(white, .5)
         &:hover
             color orange
 
@@ -57,6 +77,10 @@
                 color orange
     &--fullwidth
         max-width: none
+        & ^[0]__address
+            display none
+            @media (min-width: scr_xs)
+                display block
 .radia
 
 

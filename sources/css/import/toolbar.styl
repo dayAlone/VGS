@@ -7,11 +7,15 @@
     align-content: center
     justify-content: flex-start
     position relative
-
     z-index: 3000
     font-size 12px
+    margin-bottom 10px
+    @media (min-width: scr_sm)
+        margin-bottom 30px
     @media (min-width: scr_md)
         font-size 13px
+    @media (min-width: scr_lg)
+        margin-bottom 0
     &__nav,
     &__lang,
     &__contacts
@@ -53,14 +57,15 @@
             color orange
     &__logo
         position relative
-        top 0px
+        top -3px
         margin-right 15px
+        align-self: center
         @media (min-width: scr_sm)
             margin-right 30px
         @media (min-width: scr_md)
             margin-right 60px
         svg
-            size 73px 40px
+            size 83px 50px
             @media (min-width: scr_sm)
                 size 93px 60px
             @media (min-width: scr_md)
@@ -75,13 +80,14 @@
         z-index: 20
         @extend .page__hide-with-menu
     &--black
-        width auto
-        & ^[0]__link
-            color black
-            &:hover
-                color orange
-        & ^[0]__nav
-            color black
-            svg
-                path
-                    fill black
+        @media (min-width: scr_lg)
+            width auto
+            & ^[0]__link
+                color black
+                &:hover
+                    color orange
+            & ^[0]__nav
+                color black
+                svg
+                    path
+                        fill black
