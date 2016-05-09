@@ -20,6 +20,12 @@ $arUrlRewrite = array(
 		"PATH"      => "/catalog/index.php",
 	),
 	array(
+		"CONDITION" => "#^/services/([\\w-_]+)/.*#",
+		"RULE"      => "&ELEMENT_CODE=\$1&\$2",
+		"ID"        => "",
+		"PATH"      => "/services/index.php",
+	),
+	array(
 		"CONDITION" => "#^/press/([\\w-_]+)/([\\w-_]+)/.*#",
 		"RULE"      => "&SECTION_CODE=\$1&ELEMENT_CODE=\$2&\$3",
 		"ID"        => "",

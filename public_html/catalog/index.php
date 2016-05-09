@@ -1,11 +1,13 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+$APPLICATION->SetPageProperty('body_class', 'page--production');
+if (isset($_REQUEST['ELEMENT_CODE'])):
 
-if (isset($_REQUEST['SECTION_CODE'])):
-  $APPLICATION->SetPageProperty('body_class', 'page--production');
+elseif (isset($_REQUEST['SECTION_CODE'])):
+
 else:
-  $APPLICATION->SetTitle('Продукция');
   $APPLICATION->SetPageProperty('body_class', 'page--blank page--production');
+  $APPLICATION->SetTitle('Продукция');
   $APPLICATION->SetPageProperty('footer_class', ' footer--fullwidth');
   $APPLICATION->SetPageProperty('toolbar_class', ' toolbar--white');
   $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "buttons", array(

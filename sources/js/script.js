@@ -1,5 +1,11 @@
 (function() {
-  var calculateLayout, delay, end, slickSettings, spinOptions;
+  var calculateLayout, delay, end, galleryOptions, slickSettings, spinOptions;
+
+  galleryOptions = {
+    history: false,
+    focus: false,
+    shareEl: false
+  };
 
   slickSettings = {
     infinite: true,
@@ -63,6 +69,25 @@
     return $(this).block().mod('end', el.outerHeight() <= $(this).scrollTop() + $(this).outerHeight());
   };
 
+  this.initGalleries = function() {
+    return $('.licenses__item, .album').click(function(e) {
+      var elem, gallery, items, options;
+      elem = $('.pswp')[0];
+      options = galleryOptions;
+      if ($(this).parent().hasMod('show-all')) {
+        items = $(this).parent().data('pictures');
+        options.index = $(this).index();
+      } else {
+        items = $(this).data('pictures');
+      }
+      if (items.length > 0) {
+        gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+      }
+      return e.preventDefault();
+    });
+  };
+
   $(document).ready(function() {
     $('.scroll__wrap').on('scroll', _.throttle(checkScroll, 100));
     $(window).on('resize', _.throttle(calculateLayout, 300));
@@ -72,6 +97,7 @@
       modPrefix: '--',
       modDlmtr: '--'
     });
+    initGalleries();
     $('.toolbar__nav, .toolbar__nav-close, .nav__close').on('click', function(e) {
       $('.page').mod('open', !$('.page').hasMod('open'));
       return e.preventDefault();
