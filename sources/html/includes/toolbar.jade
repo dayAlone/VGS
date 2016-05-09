@@ -4,10 +4,10 @@ if toolbarClass
 div(class="#{classNames}")
     a.toolbar__logo(href='/')
         include ../../../public_html/layout/images/svg/logo.svg
-    .toolbar__lang.lang
-        a.lang__link.lang__link--ru.lang__link--active(href='#') RU
-        a.lang__link.lang__link--en(href='#') EN
-        .lang__line
+    .toolbar__lang.language
+        a.language__link.language__link--ru.language__link--active(href='#') RU
+        a.language__link.language__link--en(href='#') EN
+        span.language__line
     if showDropdown
         .toolbar__dropdown.dropdown.visible-lg
             a.dropdown__trigger 2016

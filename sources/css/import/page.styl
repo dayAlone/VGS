@@ -22,6 +22,7 @@
             filter: blur(6px)
         @media (min-width: scr_lg)
             .page--open &
+                filter: none
                 opacity: 0
                 transition-delay: 0s
                 pointer-events: none
@@ -56,7 +57,6 @@
         margin-right -25px
         margin-left -25px
         padding 30px 30px
-
         @media (min-width: scr_sm)
             height: 100%
             margin-right -30px
@@ -90,6 +90,8 @@
             text-align left
             max-width: 50%
             font-size 4vw
+            position absolute
+            bottom: 60px
     &__sub-title
         @extend .page__hide-with-menu
     &__footer
@@ -100,13 +102,12 @@
         position fixed
         top 0
         left 0
-
+        background-color #121933
         z-index: 10
         background-size cover
         background-position center center
         -webkit-filter blur(0px)
         filter blur(0px)
-        transform: scale(1.05)
         transition .3s filter
         will-change transform
         size 100% 200px
@@ -122,13 +123,14 @@
             top 0
             background-image url(/layout/images/pattern.png)
             background-size 2px 2px
+
         &:after
             content: ""
             position absolute
             size 100%
             left 0
             top 0
-            background-color alpha(black, .4)
+            background-color alpha(black, 0)
     &--services
         & ^[0]__bg
             background-image url(/layout/images/bg.services.jpg)
@@ -157,6 +159,7 @@
             background-image url(/layout/images/bg.about.jpg)
     &--index
         padding 15px 10px
+        background-color black
         @media (min-width: scr_xs)
             padding 25px
         @media (min-width: scr_sm)
@@ -182,15 +185,14 @@
                 height auto
         & ^[0]__wrap
             border 10px solid orange
-            background-color alpha(black, .5)
+            background-color alpha(black, 0)
             align-items: center
             margin-bottom 0
             padding 15px
             height calc(100% - 35px)
             background-image url(/layout/images/pattern.png)
             background-size 2px 2px
-            @media (min-width: scr_xs)
-                padding 20px
+            padding 20px
             @media (min-width: scr_sm)
                 padding 40px 30px
                 min-height: 550px
@@ -214,6 +216,8 @@
             font-size: 7.1vw
             min-height: 0
             justify-content: center
+            position relative
+            bottom: 0
             @media (min-width: scr_sm)
                 font-size: 52px
             @media (min-width: scr_md)
@@ -245,6 +249,9 @@
         & ^[0]__title
             min-height: 0
             max-width: none
+            position relative
+            bottom 0
+            margin-top auto
             @media (min-width: scr_md)
                 font-size 80px
                 justify-content: flex-start
@@ -254,10 +261,20 @@
             height 100%
         & ^[0]__content
             padding-top 0
+            position relative
+            width auto
+
+            background-color transparent
             @media (min-width: scr_sm)
                 height auto
             @media (min-width: scr_lg)
                 padding 0
+            .scroll
+                border 0
+                &__wrap
+                    margin 0
+                &__content
+                    padding: 0
         & ^[0]__footer
             color alpha(white, .5)
             a
@@ -266,6 +283,7 @@
                     color orange
     &--open
         position fixed
+        width 100%
         &^[0]--index ^[0]__title
             opacity: 0
             transition-delay: 0s

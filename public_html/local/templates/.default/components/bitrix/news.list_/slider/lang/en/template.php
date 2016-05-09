@@ -1,0 +1,3 @@
+<?
+$MESS["MORE"] = "Read more";
+?>

@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+  Array(
+		"О компании",
+		"/about/",
+		Array(),
+		Array(),
+		""
+	),
+  Array(
+		"Продукция",
+		"/catalog/",
+		Array(),
+		Array(),
+		""
+	),
+  Array(
+		"Технологии ПВР",
+		"/services/",
+		Array(),
+		Array(),
+		""
+	),
+  Array(
+		"Лицензии и сертификаты",
+		"/licenses/",
+		Array(),
+		Array(),
+		""
+	),
+  Array(
+		"Пресс-центр",
+		"/press/",
+		Array(),
+		Array(),
+		""
+	),
+  Array(
+		"Партнеры",
+		"/partners/",
+		Array(),
+		Array(),
+		""
+	),
+  Array(
+		"Контакты",
+		"/contacts/",
+		Array(),
+		Array(),
+		""
+	)
+);
+?>

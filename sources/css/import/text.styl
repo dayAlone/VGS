@@ -1,6 +1,7 @@
 .text
     color #3a3a3a
     font-size 14px
+    line-height 1.7
     padding-bottom 20px
     @media (min-width: scr_sm)
         font-size 15px
@@ -30,7 +31,7 @@
     p a
         border-line(alpha(orange,.4))
         color orange
-    a&__link
+    a&__link, p a&__link
         background transparent
         color #3a3a3a
         &:hover
@@ -46,14 +47,18 @@
 
     img
         max-width: 100%
-    &__image
+        margin-bottom 25px
+    img&__image
+        &--small
+          max-width: 35%
         &--right
+            clear: both;
             margin-left 20px
-            margin-bottom 25px
             float right
         &--left
+            clear: both
             margin-right 20px
-            margin-bottom 25px
+
             float left
     &__blockquote
         text-transform uppercase
@@ -64,7 +69,7 @@
         padding-top 0px
         padding-left 25px
         border-left 5px solid orange
-        display inline-block
+
         margin-bottom 25px
         margin-top 0px
 

@@ -1,18 +1,21 @@
-.lang
+.language
     position relative
     @extend .page__hide-with-menu
     &__line
-        size 19px 4px
-        background-color orange !important
+        size 19px 0
+        border-bottom 4px solid orange !important
         position absolute
         bottom -5px
+        pointer-events: none
         t left
+        &:hover, &:focus, &:active
+            border-color orange
     &__link
         text-transform uppercase
         font-weight bold
         color alpha(white, .5)
         margin 0 7px
-        &:hover
+        &:hover, &:focus, &:active
             color white
         &--active
             color white
@@ -25,6 +28,8 @@
         &--en:hover
             & ~ ^[0]__line
                 left 41px
+                border-color orange
         &--ru:hover
             & ~ ^[0]__line
                 left 7px
+                border-color orange

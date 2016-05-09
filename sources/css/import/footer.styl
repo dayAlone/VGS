@@ -10,7 +10,7 @@
     justify-content: space-between
     color alpha(dark_blue, .5)
     height: 50px
-    
+
     @media (min-width: scr_xs)
         justify-content: flex-start
     @media (min-width: scr_lg)
@@ -46,8 +46,6 @@
         display none
         svg path
             fill alpha(dark_blue, .5)
-        @media (min-width: scr_md)
-            display flex
         @media (min-width: scr_lg)
             svg path
                 fill alpha(white, .5)
@@ -63,11 +61,12 @@
             color alpha(white, .5)
         &:hover
             color orange
-
     &--dark
         color dark_blue
         & ^[0]__radia
             color dark_blue
+            @media (min-width: scr_md)
+              display flex
             svg
                 path
                     fill dark_blue
@@ -82,8 +81,6 @@
             @media (min-width: scr_xs)
                 display block
 .radia
-
-
     align-content: center
     &__logo
         margin-right 10px

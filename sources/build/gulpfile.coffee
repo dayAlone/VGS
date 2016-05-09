@@ -210,16 +210,14 @@ gulp.task 'ready', ->
 gulp.task 'default', ->
 
 	browserSync.init
-		server:
-			baseDir: './public_html'
+		proxy:
+			target: "http://vgs.local"
 
 	gulp.watch "#{path.js.sources}/**/*.coffee", ->
 		sequence 'js_front', 'reload_js'
 
-
 	gulp.watch "#{path.css.sources}/**/*.styl", ->
 		sequence 'css_front', 'reload_css'
-
 
 	gulp.watch "#{sources}/images/svg/**/*.svg", ->
 		sequence 'svg_mini'
