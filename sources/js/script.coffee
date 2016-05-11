@@ -53,7 +53,7 @@ calculateLayout = ->
 	$(this).block().mod 'end', el.outerHeight() <= $(this).scrollTop() + $(this).outerHeight()
 
 @initGalleries = ->
-	$('.licenses__item, .album, .gallery__item').click (e)->
+	$('.licenses__item, .album, .gallery__item, .button--gallery').click (e)->
 		e.preventDefault()
 
 		elem    = $('.pswp')[0];

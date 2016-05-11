@@ -11,6 +11,7 @@ function page_title() {
 	else
 		return $APPLICATION->GetTitle();
 }
+
 function sub_title() {
 	global $APPLICATION;
 	if($APPLICATION->GetPageProperty('sub_title'))
@@ -30,6 +31,7 @@ function footer_class()
 		return $APPLICATION->GetPageProperty('footer_class');
 	}
 }
+
 function toolbar_class()
 {
 	global $APPLICATION;
