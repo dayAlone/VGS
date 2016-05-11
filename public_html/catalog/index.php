@@ -2,7 +2,15 @@
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetPageProperty('body_class', 'page--production');
 if (isset($_REQUEST['ELEMENT_CODE'])):
-
+    $APPLICATION->IncludeComponent("bitrix:news.detail", "catalog", Array(
+      "IBLOCK_ID"     => 2,
+      "ELEMENT_CODE"  => $_REQUEST['ELEMENT_CODE'],
+      "CHECK_DATES"   => "N",
+      "IBLOCK_TYPE"   => "content_ru",
+      "SET_TITLE"     => "Y",
+      "CACHE_TYPE"    => "A",
+      "PROPERTY_CODE" => array("GALLERY"),
+    ));
 elseif (isset($_REQUEST['SECTION_CODE'])):
   $APPLICATION->IncludeComponent("bitrix:news.list", "catalog",
   	array(
@@ -10,7 +18,7 @@ elseif (isset($_REQUEST['SECTION_CODE'])):
   		"NEWS_COUNT"           => "20",
   		"SORT_BY1"             => "ACTIVE_FROM",
   		"SORT_ORDER1"          => "DESC",
-  		"DETAIL_URL"           => "/catalog/#ELEMENT_CODE#/",
+  		"DETAIL_URL"           => "/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
   		"CACHE_TYPE"           => "A",
   		"SET_TITLE"            => "N",
   		"SHOW_DESCRIPTION"     => "Y",
