@@ -8,9 +8,22 @@
         font-size 14px
 
     &__item
-        margin 0 15px 30px
-        flex 1 1 25%
+        margin 0 10px 20px
+        flex 1 1 50%
         color #2c3648
+        overflow hidden
+        flex-basis: calc(50% - 20px)
+        max-width: @flex-basis
+        @media (min-width: 480px)
+          flex-basis: calc(33.33333% - 30px)
+          max-width: @flex-basis
+        @media (min-width: scr_sm)
+            margin 0 15px 30px
+            flex-basis: calc(20% - 30px)
+            max-width: @flex-basis
+        @media (min-width: scr_lg)
+            flex-basis: calc(33.33333% - 30px)
+            max-width: @flex-basis
         &:hover
             color orange
             & ^[0]__photo:after

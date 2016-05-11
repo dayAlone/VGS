@@ -38,6 +38,7 @@
       <a href="/en/" class="language__link language__link--en" <?=LANGUAGE_ID == 'en' ? 'language__link--active' : '' ?>>EN</a>
       <span class="language__line"></span>
     </div>
+    <? $APPLICATION->ShowViewContent('toolbar'); ?>
     <div class="toolbar__contacts">
       <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email')?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'email')?></a>
       <br>

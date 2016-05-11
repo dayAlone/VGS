@@ -4,7 +4,20 @@ $APPLICATION->SetPageProperty('body_class', 'page--production');
 if (isset($_REQUEST['ELEMENT_CODE'])):
 
 elseif (isset($_REQUEST['SECTION_CODE'])):
-
+  $APPLICATION->IncludeComponent("bitrix:news.list", "catalog",
+  	array(
+  		"IBLOCK_ID"            => 2,
+  		"NEWS_COUNT"           => "20",
+  		"SORT_BY1"             => "ACTIVE_FROM",
+  		"SORT_ORDER1"          => "DESC",
+  		"DETAIL_URL"           => "/catalog/#ELEMENT_CODE#/",
+  		"CACHE_TYPE"           => "A",
+  		"SET_TITLE"            => "N",
+  		"SHOW_DESCRIPTION"     => "Y",
+  		"DISPLAY_BOTTOM_PAGER" => "Y",
+  		"PARENT_SECTION_CODE"  => $_REQUEST['SECTION_CODE'],
+  	)
+	);
 else:
   $APPLICATION->SetPageProperty('body_class', 'page--blank page--production');
   $APPLICATION->SetTitle('Продукция');

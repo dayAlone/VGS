@@ -11,7 +11,7 @@
       ),
   false);
 ?>
-<h1 class="page__title"><?=$APPLICATION->ShowTitle();?></h1>
+<h1 class="page__title"><?=$APPLICATION->AddBufferContent("page_title");?></h1>
 <div class="page__content content">
   <div class="content__scroll scroll">
     <div class="scroll__wrap">

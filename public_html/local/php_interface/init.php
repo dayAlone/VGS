@@ -119,7 +119,7 @@ function IBlockElementsMenu($IBLOCK_ID)
 if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 	$obCache       = new CPHPCache();
 	$cacheLifetime = 86400;
-	$cacheID       = 'BG_'.md5($APPLICATION->GetCurDir());
+	$cacheID       = 'BG_IMAGE_'.md5($APPLICATION->GetCurDir());
 	$cachePath     = '/';
 	if( $obCache->InitCache($cacheLifetime, $cacheID, $cachePath) ):
 	   $vars = $obCache->GetVars();
@@ -133,7 +133,7 @@ if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 		for ($i=0; $i < count($path); $i++)
 			$urls[] = (isset($urls[$i-1])?$urls[$i-1]:"/").$path[$i].'/';
 
-		$arFilter = Array("IBLOCK_ID" => 6, "PROPERTY_PAGE" => $urls);
+		$arFilter = Array("IBLOCK_ID" => 7, "PROPERTY_PAGE" => $urls);
 		$res      = CIBlockElement::GetList(Array("PROPERTY_PAGE"=>"ASC"), $arFilter, false, false, $arSelect);
 
 		global $CACHE_MANAGER;
@@ -147,13 +147,14 @@ if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 		$CACHE_MANAGER->EndTagCache();
 		$obCache->EndDataCache(array('BG_IMAGE' => $_GLOBALS['BG_IMAGE']));
 	endif;
+
 endif;
 
 AddEventHandler("iblock", "OnBeforeIBlockElementAdd", "OnBeforeIBlockElementAddHandler");
 AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", "OnBeforeIBlockElementAddHandler");
 function OnBeforeIBlockElementAddHandler(&$arFields)
 {
-	if($arFields['IBLOCK_ID'] == 6):
+	if($arFields['IBLOCK_ID'] == 7):
 
 		global $CACHE_MANAGER;
 

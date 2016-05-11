@@ -53,18 +53,22 @@ calculateLayout = ->
 	$(this).block().mod 'end', el.outerHeight() <= $(this).scrollTop() + $(this).outerHeight()
 
 @initGalleries = ->
-	$('.licenses__item, .album').click (e)->
+	$('.licenses__item, .album, .gallery__item').click (e)->
+		e.preventDefault()
+
 		elem    = $('.pswp')[0];
 		options = galleryOptions
+
 		if $(this).parent().hasMod 'show-all'
 			items = $(this).parent().data 'pictures'
 			options.index = $(this).index()
 		else
 			items = $(this).data 'pictures'
-		if items.length > 0
+		console.log items
+		if items
 			gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
 			gallery.init()
-		e.preventDefault()
+
 
 $(document).ready ->
 	#$(window).on 'scroll',  _.throttle(agreementScroll, 100)
@@ -76,6 +80,9 @@ $(document).ready ->
 	    elemPrefix: '__'
 	    modPrefix: '--'
 	    modDlmtr: '--'
+
+	if $.browser.mobile == true
+		$('body').addClass 'mobile'
 
 	initGalleries()
 

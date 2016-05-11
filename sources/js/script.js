@@ -70,8 +70,9 @@
   };
 
   this.initGalleries = function() {
-    return $('.licenses__item, .album').click(function(e) {
+    return $('.licenses__item, .album, .gallery__item').click(function(e) {
       var elem, gallery, items, options;
+      e.preventDefault();
       elem = $('.pswp')[0];
       options = galleryOptions;
       if ($(this).parent().hasMod('show-all')) {
@@ -80,11 +81,11 @@
       } else {
         items = $(this).data('pictures');
       }
-      if (items.length > 0) {
+      console.log(items);
+      if (items) {
         gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
-        gallery.init();
+        return gallery.init();
       }
-      return e.preventDefault();
     });
   };
 
@@ -97,6 +98,9 @@
       modPrefix: '--',
       modDlmtr: '--'
     });
+    if ($.browser.mobile === true) {
+      $('body').addClass('mobile');
+    }
     initGalleries();
     $('.toolbar__nav, .toolbar__nav-close, .nav__close').on('click', function(e) {
       $('.page').mod('open', !$('.page').hasMod('open'));
