@@ -68,5 +68,10 @@
 </div>
 
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/include/feedback-".LANGUAGE_ID.".php"); ?>
+<div class="map">
+    <a href='#' class='map__close'><?=svg('close')?></a>
+    <div class='map__content' id="map" data-coords="<?=COption::GetOptionString("grain.customsettings", 'coords')?>" data-zoom="15" data-map data-lang="<?=(LANGUAGE_ID=='ru'?"ru_RU":"en_US")?>" data-text="<?=SITE_NAME?>"></div>
+</div>
+
 </body>
 </html>

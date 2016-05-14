@@ -77,6 +77,22 @@ calculateLayout = ->
 			gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
 			gallery.init()
 
+@initMap = ->
+	if $('[data-map]').length > 0
+		$('[data-map]').each ->
+			$map = $(this)
+			lang = $(this).data('lang')
+			lang = "ru_RU" if !lang
+			$.getScript "http://api-maps.yandex.ru/2.1/?lang=#{lang}", ->
+				ymaps.ready ()->
+					@map = new ymaps.Map $map.attr('id'), {
+						center: $map.data('coords').split(',')
+						zoom: $map.data('zoom'),
+						controls: ['geolocationControl', 'zoomControl']
+					}
+					@mark = new ymaps.Placemark map.getCenter(), { hintContent: $map.data('text') }, { preset: "twirl#nightDotIcon" }
+					@map.geoObjects.add mark
+					@map.container.fitToViewport()
 
 $(document).ready ->
 	#$(window).on 'scroll',  _.throttle(agreementScroll, 100)
@@ -94,12 +110,24 @@ $(document).ready ->
 
 	initGalleries()
 
+	initMap()
+
 	$('.toolbar__nav, .toolbar__nav-close, .nav__close').on 'click', (e)->
 		$('.page').mod 'open', !$('.page').hasMod 'open'
 		e.preventDefault()
 
 	$('.modal').on 'shown.bs.modal', (e)->
 		getCaptcha()
+
+	$('.map__close').click (e)->
+		$('.map').mod 'active', false
+		e.preventDefault()
+
+	$('a[href*="#map"]').click (e)->
+		$('.map').mod 'active', true
+		if $('.map ymaps').length == 0
+			initMap()
+		e.preventDefault()
 
 	$('.captcha__refresh').click (e)->
 		getCaptcha()

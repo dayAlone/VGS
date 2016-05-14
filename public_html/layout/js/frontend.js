@@ -31371,6 +31371,35 @@ return PhotoSwipeUI_Default;
     });
   };
 
+  this.initMap = function() {
+    if ($('[data-map]').length > 0) {
+      return $('[data-map]').each(function() {
+        var $map, lang;
+        $map = $(this);
+        lang = $(this).data('lang');
+        if (!lang) {
+          lang = "ru_RU";
+        }
+        return $.getScript("http://api-maps.yandex.ru/2.1/?lang=" + lang, function() {
+          return ymaps.ready(function() {
+            this.map = new ymaps.Map($map.attr('id'), {
+              center: $map.data('coords').split(','),
+              zoom: $map.data('zoom'),
+              controls: ['geolocationControl', 'zoomControl']
+            });
+            this.mark = new ymaps.Placemark(map.getCenter(), {
+              hintContent: $map.data('text')
+            }, {
+              preset: "twirl#nightDotIcon"
+            });
+            this.map.geoObjects.add(mark);
+            return this.map.container.fitToViewport();
+          });
+        });
+      });
+    }
+  };
+
   $(document).ready(function() {
     $('.scroll__wrap').on('scroll', _.throttle(checkScroll, 100));
     $(window).on('resize', _.throttle(calculateLayout, 300));
@@ -31384,12 +31413,24 @@ return PhotoSwipeUI_Default;
       $('body').addClass('mobile');
     }
     initGalleries();
+    initMap();
     $('.toolbar__nav, .toolbar__nav-close, .nav__close').on('click', function(e) {
       $('.page').mod('open', !$('.page').hasMod('open'));
       return e.preventDefault();
     });
     $('.modal').on('shown.bs.modal', function(e) {
       return getCaptcha();
+    });
+    $('.map__close').click(function(e) {
+      $('.map').mod('active', false);
+      return e.preventDefault();
+    });
+    $('a[href*="#map"]').click(function(e) {
+      $('.map').mod('active', true);
+      if ($('.map ymaps').length === 0) {
+        initMap();
+      }
+      return e.preventDefault();
     });
     $('.captcha__refresh').click(function(e) {
       getCaptcha();
