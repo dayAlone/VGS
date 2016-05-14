@@ -33,6 +33,14 @@ delay = (ms, func) -> setTimeout func, ms
 
 end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'
 
+@getCaptcha = ()->
+	$.get '/include/captcha.php', (data)->
+		setCaptcha data
+
+@setCaptcha = (code)->
+	$('input[name=captcha_sid], input[name=captcha_code]').val(code)
+	$('.captcha').css 'background-image', "url(/include/captcha.php?captcha_sid=#{code})"
+
 calculateLayout = ->
 	if $.browser.mobile
 		$('html').addClass 'mobile'
@@ -89,6 +97,26 @@ $(document).ready ->
 	$('.toolbar__nav, .toolbar__nav-close, .nav__close').on 'click', (e)->
 		$('.page').mod 'open', !$('.page').hasMod 'open'
 		e.preventDefault()
+
+	$('.modal').on 'shown.bs.modal', (e)->
+		getCaptcha()
+
+	$('.captcha__refresh').click (e)->
+		getCaptcha()
+		e.preventDefault()
+
+	$('.feedback').elem('form').submit (e)->
+		e.preventDefault()
+		request = $(this).serialize()
+		$.post '/include/send.php', request,
+	        (data) ->
+	        	data = $.parseJSON(data)
+	        	if data.status == "ok"
+	        		$('.feedback').elem('form').hide().addClass 'hidden'
+	        		$('.feedback').elem('success').show().removeClass 'hidden'
+	        	else if data.status == "error"
+	        		$('input[name=captcha_word]').addClass('parsley-error')
+	        		getCaptcha()
 
 	delay 300, ->
 	  calculateLayout()

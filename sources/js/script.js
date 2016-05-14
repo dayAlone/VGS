@@ -41,6 +41,17 @@
 
   end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd';
 
+  this.getCaptcha = function() {
+    return $.get('/include/captcha.php', function(data) {
+      return setCaptcha(data);
+    });
+  };
+
+  this.setCaptcha = function(code) {
+    $('input[name=captcha_sid], input[name=captcha_code]').val(code);
+    return $('.captcha').css('background-image', "url(/include/captcha.php?captcha_sid=" + code + ")");
+  };
+
   calculateLayout = function() {
     if ($.browser.mobile) {
       $('html').addClass('mobile');
@@ -105,6 +116,28 @@
     $('.toolbar__nav, .toolbar__nav-close, .nav__close').on('click', function(e) {
       $('.page').mod('open', !$('.page').hasMod('open'));
       return e.preventDefault();
+    });
+    $('.modal').on('shown.bs.modal', function(e) {
+      return getCaptcha();
+    });
+    $('.captcha__refresh').click(function(e) {
+      getCaptcha();
+      return e.preventDefault();
+    });
+    $('.feedback').elem('form').submit(function(e) {
+      var request;
+      e.preventDefault();
+      request = $(this).serialize();
+      return $.post('/include/send.php', request, function(data) {
+        data = $.parseJSON(data);
+        if (data.status === "ok") {
+          $('.feedback').elem('form').hide().addClass('hidden');
+          return $('.feedback').elem('success').show().removeClass('hidden');
+        } else if (data.status === "error") {
+          $('input[name=captcha_word]').addClass('parsley-error');
+          return getCaptcha();
+        }
+      });
     });
     return delay(300, function() {
       return calculateLayout();

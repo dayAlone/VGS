@@ -1657,6 +1657,314 @@ a:hover {
   -webkit-filter: blur(10px);
   filter: blur(10px);
 }
+.parsley-errors-list {
+  display: none;
+}
+.parsley-errors-list.filled + a.file__trigger,
+.parsley-errors-list.filled + a.file__trigger:hover {
+  border-color: #f00 !important;
+  color: #f00 !important;
+  background-color: #fff !important;
+}
+.file .row {
+  margin-top: 4px;
+}
+.file label {
+  text-align: left !important;
+}
+.file__name {
+  font-size: 13px;
+  width: 100%;
+}
+.file__description {
+  font-size: 11px;
+}
+.file__trigger {
+  max-width: 100%;
+  min-width: 0;
+  font-size: 14px;
+  overflow: hidden;
+  height: 32px;
+  line-height: 33px;
+}
+.feedback__success {
+  display: none;
+}
+@media (min-width: 992px) {
+  #Nav {
+    display: none !important;
+  }
+}
+.modal {
+  z-index: 30000000;
+  font-family: 'GothamPro';
+  background-color: #fefefe;
+}
+.modal .modal-dialog {
+  padding: 3px 10px;
+}
+@media (min-width: 992px) {
+  .modal {
+    background-color: rgba(0,0,0,0);
+  }
+}
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 750px;
+  }
+}
+.modal .lang {
+  position: relative;
+  top: -3px;
+}
+.modal .lang__trigger {
+  font-size: 13px;
+  font-weight: 400;
+  margin-right: 15px;
+}
+.modal .lang__trigger:first-of-type:after {
+  background-color: #00f;
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+  filter: none;
+  right: -11px;
+  top: -7px;
+}
+.modal h4 {
+  font-weight: 300;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.modal h4 span {
+  color: #00f;
+  font-size: 15px;
+  width: 100%;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.modal__form {
+  margin: 0 auto;
+  max-width: 90%;
+}
+.modal__success {
+  display: none;
+}
+.modal__required {
+  font-size: 11px;
+  line-height: 1;
+  display: inline-block;
+  margin-top: 23px;
+}
+.modal .row + .row,
+.modal__footer {
+  margin-top: 30px;
+}
+.modal label {
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: #000;
+}
+.modal ul + label,
+.modal input + label {
+  margin-top: 20px;
+}
+.modal .captcha {
+  height: 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(100% - 35px);
+  float: left;
+}
+.modal .captcha__refresh {
+  float: right;
+  background: transparent !important;
+  padding-top: 4px;
+}
+.modal .captcha__refresh:hover svg path {
+  fill: #f09929;
+}
+.modal .captcha__refresh svg {
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+.modal .captcha__refresh svg path {
+  fill: blue2;
+}
+.modal .captcha,
+.modal input[type="text"],
+.modal input[type="email"],
+.modal input[type="password"],
+.modal textarea {
+  border: 1px solid rgba(128,128,128,0.6);
+  transition-property: border;
+  transition-duration: 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.modal .captcha.parsley-error,
+.modal input[type="text"].parsley-error,
+.modal input[type="email"].parsley-error,
+.modal input[type="password"].parsley-error,
+.modal textarea.parsley-error {
+  border-color: #f00 !important;
+}
+.modal input:focus {
+  outline: 0;
+}
+.modal input[type="text"],
+.modal input[type="email"],
+.modal input[type="password"] {
+  height: 32px;
+  line-height: 32px;
+  width: 100%;
+  text-align: center;
+  padding: 0 10px;
+  color: #000;
+}
+.modal input[type="text"]:focus,
+.modal input[type="email"]:focus,
+.modal input[type="password"]:focus {
+  border-color: #f09929;
+}
+.modal input[type="text"].parsley-error,
+.modal input[type="email"].parsley-error,
+.modal input[type="password"].parsley-error {
+  border-color: #f00;
+}
+.modal input[type="text"].parsley-error:focus,
+.modal input[type="email"].parsley-error:focus,
+.modal input[type="password"].parsley-error:focus {
+  border-color: rgba(255,0,0,0.7);
+}
+.modal input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+  background: blue2;
+  width: 185px;
+  max-width: 100%;
+  height: 42px;
+  line-height: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 36px;
+  font-size: 15px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  background: #f09929;
+  border: 3px solid #f09929;
+}
+.modal input[type="submit"]:hover {
+  background: #fff;
+  color: #f09929;
+}
+.modal textarea {
+  min-height: 80px;
+  resize: none;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+}
+.modal textarea:focus {
+  outline: 0;
+}
+.modal textarea.parsley-error {
+  border-color: #f00;
+}
+.modal textarea:focus {
+  border-color: #f09929;
+}
+.modal .close {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #808080;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(128,128,128,0.5) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 100%;
+}
+.modal .close:hover {
+  text-decoration: none;
+}
+.modal .close:hover {
+  color: #f09929;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(240,153,41,0.5) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 100%;
+}
+.modal .close:hover:hover {
+  text-decoration: none;
+}
+.modal-content {
+  border-radius: 0;
+  min-height: 100px;
+  padding: 20px 15px 15px;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    box-shadow: none;
+    border: 0;
+  }
+}
+@media (min-width: 768px) {
+  .modal-content {
+    padding: 20px 40px 60px;
+  }
+}
+.modal-frame {
+  width: 100%;
+  border: 2px solid #000;
+  min-height: 100px;
+  position: relative;
+  padding: 30px;
+}
+.modal-frame:after {
+  content: attr(data-title);
+  position: absolute;
+  background: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 20px;
+  top: -8px;
+  left: 50%;
+  font-size: 13px;
+  letter-spacing: 6px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.modal-backdrop {
+  background: #fff;
+}
+.modal-backdrop.in {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+  filter: none;
+}
+@media (min-width: 768px) {
+  .modal-backdrop {
+    background: #000;
+  }
+  .modal-backdrop.in {
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+}
 .dropdown {
   position: relative;
   height: 43px;

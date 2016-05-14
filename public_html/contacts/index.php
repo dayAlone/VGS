@@ -15,7 +15,7 @@ $APPLICATION->SetPageProperty('body_class', 'page--contacts');
   <div class="text__divider"></div>
   <h5>e-mail:</h5>
   <p> <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email')?>" class="text__link"><?=COption::GetOptionString("grain.customsettings", 'email')?></a></p>
-  <a href="#" class="button">Отправить сообщение</a>
+  <a href="#Feedback" data-toggle="modal" class="button">Отправить сообщение</a>
 </div>
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');

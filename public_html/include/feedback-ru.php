@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="center">
-        <input type="submit" class="product__big-button product__big-button--border m-margin-top" value="Отправить">
+        <input type="submit" class="product__big-button product__big-button--border" value="Отправить">
       </div>
     </form>
 
