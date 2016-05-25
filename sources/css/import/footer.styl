@@ -61,21 +61,20 @@
             color alpha(white, .5)
         &:hover
             color orange
-	/*
     &--dark
-        color dark_blue
+        //color dark_blue
         & ^[0]__radia
-            color dark_blue
+            color alpha(white, .5)
             @media (min-width: scr_md)
               display flex
             svg
                 path
-                    fill dark_blue
-        & ^[0]__link
+                    color alpha(white, .5)
+        /*& ^[0]__link
             color dark_blue
             &:hover
                 color orange
-	*/
+        */
     &--fullwidth
         max-width: none
         & ^[0]__address

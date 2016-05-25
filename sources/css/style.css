@@ -3790,14 +3790,27 @@ a.news__back svg path {
 .footer__link:hover {
   color: #f09929;
 }
---fullwidth {
+.footer--dark .footer__radia {
+  color: rgba(255,255,255,0.5);
+}
+@media (min-width: 992px) {
+  .footer--dark .footer__radia {
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+  }
+}
+.footer--dark .footer__radia svg path {
+  color: rgba(255,255,255,0.5);
+}
+.footer--fullwidth {
   max-width: none;
 }
---fullwidth --fullwidth__address {
+.footer--fullwidth .footer__address {
   display: none;
 }
 @media (min-width: 505px) {
-  --fullwidth --fullwidth__address {
+  .footer--fullwidth .footer__address {
     display: block;
   }
 }
