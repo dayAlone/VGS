@@ -58,11 +58,6 @@
     &:not(^[0]--small)
         @extend .page__hide-with-menu-desktop
 
-    &--production
-        & ^[0]__item
-            &:last-of-type
-                @media (min-width: scr_lg)
-                  flex-grow: .55
     &--index
         @extend .page__hide-with-menu-mobile
     &--small

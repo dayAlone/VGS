@@ -148,7 +148,11 @@
       return e.preventDefault();
     });
     $('.modal').on('shown.bs.modal', function(e) {
-      return getCaptcha();
+      getCaptcha();
+      return $('.page').mod('open', !$('.page').hasMod('open'));
+    });
+    $('.modal').on('hidden.bs.modal', function(e) {
+      return $('.page').mod('open', !$('.page').hasMod('open'));
     });
     $('.map__close').click(function(e) {
       $('.map').mod('active', false);

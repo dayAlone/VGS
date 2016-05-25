@@ -7,6 +7,25 @@ $s = end($arResult['SECTION']['PATH']);
 		<img src="<?=$item["DETAIL_PICTURE"]['SRC']?>" class="text__image text__image--right text__image--medium">
 	<?endif;?>
 	<?=$item["~DETAIL_TEXT"]?>
+	<div class="params">
+        <div class="params__frame">
+        <?
+        foreach ($item['PROPERTIES']['TABLE']['VALUE'] as $key => $row):?>
+            <div class="param <?=($row['prop_title'] == "Y"?"param--title":"")?>">
+            <?
+            if(isset($row['prop_title'])) unset($row['prop_title']);
+            foreach ($row as $k => $el) if(strlen($el) == 0) unset($row[$k]);
+            foreach ($row as $k => $el):
+            ?>
+                <div class="param__col" style="width: <?=100/count($row)?>%"><span><?=html_entity_decode($el)?></span></div>
+            <?
+            endforeach;?>
+            </div>
+            <?
+        endforeach;
+        ?>
+        </div>
+    </div>
 </div>
 <?$this->SetViewTarget('page_footer');?><div class="content__footer">
 	<? foreach ($item["PROPERTIES"]["FILES"]["VALUE"] as $key => $file) {?>

@@ -118,7 +118,11 @@ $(document).ready ->
 
 	$('.modal').on 'shown.bs.modal', (e)->
 		getCaptcha()
+		$('.page').mod 'open', !$('.page').hasMod 'open'
 
+	$('.modal').on 'hidden.bs.modal', (e)->
+		$('.page').mod 'open', !$('.page').hasMod 'open'
+		
 	$('.map__close').click (e)->
 		$('.map').mod 'active', false
 		e.preventDefault()
