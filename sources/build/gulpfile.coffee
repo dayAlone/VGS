@@ -136,7 +136,7 @@ gulp.task 'css_stylus', ->
 	.pipe stylus
 		use: nib()
 	.pipe autoprefixer
-        browsers: ['last 2 versions'],
+        browsers: ['last 4 versions'],
         cascade: false
 	.pipe gulp.dest path.css.sources
 
@@ -150,10 +150,10 @@ gulp.task 'css_mini', ->
 	.pipe gulp.dest path.css.frontend
 
 	.pipe csscomb()
+	.pipe cssmin()
+	#.pipe cmq({log: true})
 
-    .pipe cmq
-      log: true
-	#.pipe cssmin()
+
 
 
 
@@ -198,7 +198,7 @@ gulp.task 'reload_js', ->
 	browserSync.reload '/layout/js/frontend.js'
 
 gulp.task 'ready_css', ->
-	sequence 'css_bootstrap', 'css_plugins', 'css_front', 'css_mini'
+	sequence 'css_bootstrap', 'css_plugins', 'css_front'#, 'css_mini'
 
 gulp.task 'ready_js', ->
 	sequence 'js_modernizr', 'js_plugins', 'js_front', 'js_mini'
