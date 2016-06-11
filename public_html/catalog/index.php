@@ -35,11 +35,11 @@ else:
   $APPLICATION->SetTitle('Продукция');
   $APPLICATION->SetPageProperty('footer_class', ' footer--fullwidth');
   $APPLICATION->SetPageProperty('toolbar_class', ' toolbar--white');
-  
+
   $APPLICATION->IncludeComponent("bitrix:news.list", "buttons",
       array(
         "IBLOCK_ID"      => "2",
-        "NEWS_COUNT"     => "4",
+        "NEWS_COUNT"     => "40",
         "SORT_BY1"       => "SORT",
         "SORT_ORDER1"    => "ASC",
         "CACHE_TYPE"     => "A",
