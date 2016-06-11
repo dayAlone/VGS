@@ -1,6 +1,8 @@
 <?
 $arResult["PROPS"] = array();
 $props = &$arResult["PROPS"];
+$arResult["NAME"] = strip_tags($arResult["~NAME"]);
+
 function images_sort($a, $b)
 {
     if($a['sort']=='' && $b['sort']>0)

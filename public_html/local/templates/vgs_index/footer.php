@@ -1,15 +1,18 @@
 </div>
 <?
-  $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "buttons", array(
-    "IBLOCK_TYPE"  => "content_".LANGUAGE_ID,
-    "IBLOCK_ID"    => "2",
-    "TOP_DEPTH"    => "1",
-    "CACHE_TYPE"   => "A",
-    "CACHE_TIME"   => "36000",
-    "CLASS"        => "buttons--small buttons--index"
-  ),
-  false
-  );
+  $APPLICATION->IncludeComponent("bitrix:news.list", "buttons",
+      array(
+        "IBLOCK_ID"      => "2",
+        "NEWS_COUNT"     => "4",
+        "SORT_BY1"       => "SORT",
+        "SORT_ORDER1"    => "ASC",
+        "CACHE_TYPE"     => "A",
+        "SET_TITLE"      => "N",
+        "CLASS"          => "buttons--small buttons--index",
+        "PARENT_SECTION" => "null"
+      ),
+      false
+    );
 ?>
 <?
   $APPLICATION->IncludeComponent("bitrix:news.list", "certs",
