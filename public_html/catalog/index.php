@@ -40,7 +40,7 @@ else:
       array(
         "IBLOCK_ID"      => "2",
         "NEWS_COUNT"     => "40",
-        "SORT_BY1"       => "SORT",
+        "SORT_BY1"       => "SECTION_ID",
         "SORT_ORDER1"    => "ASC",
         "CACHE_TYPE"     => "A",
         "SET_TITLE"      => "N",

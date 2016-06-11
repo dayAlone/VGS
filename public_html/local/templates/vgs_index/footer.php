@@ -3,9 +3,11 @@
   $APPLICATION->IncludeComponent("bitrix:news.list", "buttons",
       array(
         "IBLOCK_ID"      => "2",
-        "NEWS_COUNT"     => "4",
-        "SORT_BY1"       => "SORT",
+        "NEWS_COUNT"     => "40",
+        "SORT_BY1"       => "SECTION_ID",
         "SORT_ORDER1"    => "ASC",
+        "SORT_BY2"       => "SORT",
+        "SORT_ORDER2"    => "ASC",
         "CACHE_TYPE"     => "A",
         "SET_TITLE"      => "N",
         "CLASS"          => "buttons--small buttons--index",
