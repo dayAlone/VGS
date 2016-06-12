@@ -31329,19 +31329,21 @@ return PhotoSwipeUI_Default;
     } else {
       $('html').removeClass('mobile');
     }
-    $('.scroll').mod('ready', $('.scroll__content').height() > $('.scroll__wrap').height());
-    if ($(window).width() >= 768 && !$.browser.mobile) {
-      if ($('.scroll__content').height() > $('.scroll__wrap').height()) {
-        if ($('.scroll__wrap[data-perfect-scrollbar]').length > 0) {
-          return $('.scroll__wrap[data-perfect-scrollbar]').perfectScrollbar('update');
-        } else {
-          return $('.scroll__wrap').perfectScrollbar({
-            suppressScrollX: true,
-            includePadding: true
-          });
+    return $('.scroll').each(function(key, el) {
+      $(el).mod('ready', $(el).find('.scroll__content').outerHeight() > $(el).find('.scroll__wrap').outerHeight());
+      if ($(window).width() >= 768 && !$.browser.mobile) {
+        if ($(el).find('.scroll__content').outerHeight() > $(el).find('.scroll__wrap').outerHeight()) {
+          if ($(el).find('.scroll__wrap[data-perfect-scrollbar]').length > 0) {
+            return $(el).find('.scroll__wrap[data-perfect-scrollbar]').perfectScrollbar('update');
+          } else {
+            return $(el).find('.scroll__wrap').perfectScrollbar({
+              suppressScrollX: true,
+              includePadding: true
+            });
+          }
         }
       }
-    }
+    });
   };
 
   this.checkScroll = function() {

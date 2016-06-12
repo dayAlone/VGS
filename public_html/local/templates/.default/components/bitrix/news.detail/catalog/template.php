@@ -82,7 +82,7 @@ $this->SetViewTarget('footer');
 		<a href='#' class='table-modal__close'><?=svg('close')?></a>
 		<div class="scroll ">
 	      <div class="scroll__wrap">
-	        <div class="scroll__content table-modal__content">
+	        <div class="scroll__content table-modal__content text">
 
 				<?=html_entity_decode($item['PROPERTIES'][$popup.'_BEFORE']['VALUE']['TEXT'])?>
 				<?=getTable($item, $popup.'_TABLE');?>
