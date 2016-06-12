@@ -31401,8 +31401,24 @@ return PhotoSwipeUI_Default;
   };
 
   $(document).ready(function() {
+    var scrollTimer;
     $('.scroll__wrap').on('scroll', _.throttle(checkScroll, 100));
     $(window).on('resize', _.throttle(calculateLayout, 300));
+    scrollTimer = false;
+    $('.params').elem('frame').on('scroll', _.throttle((function(e) {
+      var el;
+      el = $(e.currentTarget);
+      if (el.scrollLeft() > 0) {
+        el.block().mod('left', true);
+      } else {
+        el.block().mod('left', false);
+      }
+      if (el.scrollLeft() + el.width() === el.find('.param').width()) {
+        return el.block().mod('right', true);
+      } else {
+        return el.block().mod('right', false);
+      }
+    }), 50));
     $.BEM = new $.BEM.constructor({
       namePattern: '[a-zA-Z0-9-]+',
       elemPrefix: '__',

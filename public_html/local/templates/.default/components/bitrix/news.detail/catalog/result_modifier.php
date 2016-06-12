@@ -1,7 +1,7 @@
 <?
 $arResult["PROPS"] = array();
 $props = &$arResult["PROPS"];
-$arResult["NAME"] = strip_tags($arResult["~NAME"]);
+$arResult["NAME"] = strip_tags(str_replace(array("<br/>", "<br>"), array(" ", " "), $arResult["~NAME"]));
 
 function images_sort($a, $b)
 {

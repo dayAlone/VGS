@@ -99,6 +99,21 @@ $(document).ready ->
 	$('.scroll__wrap').on 'scroll', _.throttle(checkScroll, 100)
 	$(window).on 'resize', _.throttle(calculateLayout, 300)
 
+
+	scrollTimer = false
+	$('.params').elem('frame').on 'scroll', _.throttle ((e)->
+		el = $(e.currentTarget)
+		if el.scrollLeft() > 0
+			el.block().mod 'left', true
+		else
+			el.block().mod 'left', false
+
+		if el.scrollLeft() + el.width() == el.find('.param').width()
+			el.block().mod 'right', true
+		else
+			el.block().mod 'right', false
+	), 50
+
 	$.BEM = new $.BEM.constructor
 	    namePattern: '[a-zA-Z0-9-]+',
 	    elemPrefix: '__'
@@ -122,7 +137,7 @@ $(document).ready ->
 
 	$('.modal').on 'hidden.bs.modal', (e)->
 		$('.page').mod 'open', !$('.page').hasMod 'open'
-		
+
 	$('.map__close').click (e)->
 		$('.map').mod 'active', false
 		e.preventDefault()
