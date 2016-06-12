@@ -3,6 +3,7 @@ $item = $arResult;
 $s = end($arResult['SECTION']['PATH']);
 function getTable($item, $prop) {
 	ob_start();
+		if (count($item['PROPERTIES'][$prop]['VALUE']) > 0):
 		?>
 		<div class="params">
 			<div class="params__frame">
@@ -24,6 +25,7 @@ function getTable($item, $prop) {
 				?>
 			</div>
 		</div><?
+		endif;
 		$table = ob_get_contents();
 	ob_end_clean();
 	return $table;
