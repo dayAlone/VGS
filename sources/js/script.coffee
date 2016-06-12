@@ -152,6 +152,16 @@ $(document).ready ->
 		getCaptcha()
 		e.preventDefault()
 
+	$('.table-modal__close').on 'click', (e)->
+		$('.page').mod 'popup', !$('.page').hasMod 'popup'
+		$('.table-modal').mod 'active', false
+		e.preventDefault()
+
+	$('a[href*="#table-modal"]').on 'click', (e)->
+		$($(this).attr('href')).mod 'active', true
+		$('.page').mod 'popup', !$('.page').hasMod 'popup'
+		e.preventDefault()
+
 	$('.feedback').elem('form').submit (e)->
 		e.preventDefault()
 		request = $(this).serialize()

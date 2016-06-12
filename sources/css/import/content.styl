@@ -31,7 +31,8 @@
         border-top 1px solid alpha(orange, .7)
         @media (min-width: 550px)
             flex-flow: row
-            justify-content: space-between
+            &--full
+                justify-content: space-between
         & ~ ^[0]:after
             bottom 80px
         .button

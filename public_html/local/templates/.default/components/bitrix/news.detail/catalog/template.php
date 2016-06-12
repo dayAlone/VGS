@@ -39,18 +39,26 @@ function getTable($item, $prop) {
 </div>
 <?
 $showFooter = false;
-$tables = array('POPAP_1', 'POPAP_2');
+$isPopups = false;
+$isGallery = false;
+$tables = array('POPAP_1');//, 'POPAP_2');
 foreach ($tables as $key => $popup) {
-	if (strlen($item['PROPERTIES'][$popup.'_NAME']['VALUE']) > 0) $showFooter = true;
+	if (strlen($item['PROPERTIES'][$popup.'_NAME']['VALUE']) > 0) {
+		$showFooter = true;
+		$isPopups = true;
+	}
 }
-if(count($item["PROPS"]["GALLERY"]) > 0) $showFooter = true;
+if(count($item["PROPS"]["GALLERY"]) > 0) {
+	$isGallery = true;
+	$showFooter = true;
+}
 $this->SetViewTarget('page_footer');
 	if($showFooter):
 	?>
-	<div class="content__footer">
+	<div class="content__footer <?=($isPopups && $isGallery ? 'content__footer--full' : '')?>">
 		<? foreach ($tables as $key => $popup) {
 			if (strlen($item['PROPERTIES'][$popup.'_NAME']['VALUE']) > 0):?>
-			<a href='#popup-<?=$key?>' class='file'>
+			<a href='#table-modal-<?=$key?>' class='file'>
 				<?=svg('file')?>
 				<span class='file__name'>
 					<span><?=$item['PROPERTIES'][$popup.'_NAME']['VALUE']?></span>
@@ -65,4 +73,25 @@ $this->SetViewTarget('page_footer');
 	</div>
 <?
 	endif;
+$this->EndViewTarget();
+
+$this->SetViewTarget('footer');
+	foreach ($tables as $key => $popup) {
+	?>
+	<div class="table-modal" id='table-modal-<?=$key?>'>
+		<a href='#' class='table-modal__close'><?=svg('close')?></a>
+		<div class="scroll ">
+	      <div class="scroll__wrap">
+	        <div class="scroll__content table-modal__content">
+
+				<?=html_entity_decode($item['PROPERTIES'][$popup.'_BEFORE']['VALUE']['TEXT'])?>
+				<?=getTable($item, $popup.'_TABLE');?>
+				<?=html_entity_decode($item['PROPERTIES'][$popup.'_AFTER']['VALUE']['TEXT'])?>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	<?
+	}
 $this->EndViewTarget();?>

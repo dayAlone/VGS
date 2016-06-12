@@ -185,6 +185,16 @@
       getCaptcha();
       return e.preventDefault();
     });
+    $('.table-modal__close').on('click', function(e) {
+      $('.page').mod('popup', !$('.page').hasMod('popup'));
+      $('.table-modal').mod('active', false);
+      return e.preventDefault();
+    });
+    $('a[href*="#table-modal"]').on('click', function(e) {
+      $($(this).attr('href')).mod('active', true);
+      $('.page').mod('popup', !$('.page').hasMod('popup'));
+      return e.preventDefault();
+    });
     $('.feedback').elem('form').submit(function(e) {
       var request;
       e.preventDefault();

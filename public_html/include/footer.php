@@ -1,5 +1,6 @@
-<?$APPLICATION->ShowViewContent('footer');?>
 </div>
+<?$APPLICATION->ShowViewContent('footer');?>
+
 <div class="page__footer footer <?=$APPLICATION->GetPageProperty('footer_class')?>">
   <div class="footer__copyright">
 
