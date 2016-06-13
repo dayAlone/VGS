@@ -44,12 +44,15 @@
     padding: 13px 0 10px
     font-weight 300
     font-size 95%
-    min-width 600px
+    min-width 700px
     &--title
         border-bottom: 2px solid alpha(#000000, .5)
         font-weight bold
         font-family: 'GothamPro'
-        font-size 110%
+
+        line-height 1
+        @media (min-width: scr_sm)
+            font-size 110%
     &:not(^[0]--title) + &
         border-top: 1px solid #ccd2d7
     & + &--title

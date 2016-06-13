@@ -4144,13 +4144,18 @@ a.news__back svg path {
   padding: 13px 0 10px;
   font-weight: 300;
   font-size: 95%;
-  min-width: 600px;
+  min-width: 700px;
 }
 .param--title {
   border-bottom: 2px solid rgba(0,0,0,0.5);
   font-weight: bold;
   font-family: 'GothamPro';
-  font-size: 110%;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .param--title {
+    font-size: 110%;
+  }
 }
 .param:not(.param--title) + .param {
   border-top: 1px solid #ccd2d7;
