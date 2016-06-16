@@ -3,7 +3,7 @@ $item = $arResult;
 $s = end($arResult['SECTION']['PATH']);
 function getTable($item, $prop) {
 	ob_start();
-		if (count($item['PROPERTIES'][$prop]['VALUE']) > 0):
+		if (count($item['PROPERTIES'][$prop]['VALUE']) > 0 && strlen($item['PROPERTIES'][$prop]['VALUE'][0]['prop_value_0']) > 0):
 		?>
 		<div class="params">
 			<div class="params__frame">
