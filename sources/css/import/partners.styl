@@ -2,13 +2,12 @@
     display: flex
     flex-wrap: wrap
     align-items: center
-
     &__item
-        width 50%
         text-align center
         margin 10px 0
+        flex: 1 1 50%
         @media (min-width: scr_sm)
-            width 30%
+            flex: 1 1 30%
     &__image
         max-width: 80%
         max-height: 100px

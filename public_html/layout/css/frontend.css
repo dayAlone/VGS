@@ -7002,13 +7002,21 @@ a.button--small:hover {
   align-items: center;
 }
 .partners__item {
-  width: 50%;
   text-align: center;
   margin: 10px 0;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 1 50%;
+  -ms-flex: 1 1 50%;
+  flex: 1 1 50%;
 }
 @media (min-width: 768px) {
   .partners__item {
-    width: 30%;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 30%;
+    -ms-flex: 1 1 30%;
+    flex: 1 1 30%;
   }
 }
 .partners__image {
