@@ -7003,20 +7003,22 @@ a.button--small:hover {
 }
 .partners__item {
   text-align: center;
-  margin: 10px 0;
+  margin: 15px 0;
   -o-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 1 1 50%;
   -ms-flex: 1 1 50%;
   flex: 1 1 50%;
+  max-width: 50%;
 }
 @media (min-width: 768px) {
   .partners__item {
     -o-box-flex: 1;
     box-flex: 1;
-    -webkit-flex: 1 1 30%;
-    -ms-flex: 1 1 30%;
-    flex: 1 1 30%;
+    -webkit-flex: 1 1 33.33333%;
+    -ms-flex: 1 1 33.33333%;
+    flex: 1 1 33.33333%;
+    max-width: 33.33333%;
   }
 }
 .partners__image {
