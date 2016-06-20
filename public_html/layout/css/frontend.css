@@ -6996,10 +6996,6 @@ a.button--small:hover {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -o-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
   -o-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
@@ -7167,10 +7163,6 @@ a.news__back svg path {
   display: -ms-flexbox;
   display: box;
   display: flex;
-  -o-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
   -o-box-lines: multiple;
