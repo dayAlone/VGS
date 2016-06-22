@@ -43,7 +43,7 @@ function getTable($item, $prop) {
 $showFooter = false;
 $isPopups = false;
 $isGallery = false;
-$tables = array('POPAP_1');//, 'POPAP_2');
+$tables = array('POPAP_1', 'POPAP_2');
 foreach ($tables as $key => $popup) {
 	if (strlen($item['PROPERTIES'][$popup.'_NAME']['VALUE']) > 0) {
 		$showFooter = true;
