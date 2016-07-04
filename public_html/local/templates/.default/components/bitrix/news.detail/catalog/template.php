@@ -1,6 +1,6 @@
 <?
 $item = $arResult;
-$s = end($arResult['SECTION']['PATH']);
+
 function getTable($item, $prop) {
 	ob_start();
 		if (count($item['PROPERTIES'][$prop]['VALUE']) > 0 && strlen($item['PROPERTIES'][$prop]['VALUE'][0]['prop_value_0']) > 0):
@@ -96,4 +96,10 @@ $this->SetViewTarget('footer');
 
 	<?
 	}
-$this->EndViewTarget();?>
+$this->EndViewTarget();
+$s = end($arResult['SECTION']['PATH']);
+$this->SetViewTarget('toolbar');?>
+	<a href="/catalog/<?=strlen($s['CODE']) > 0 ? $s['CODE'].'/' : ''?>" class="back toolbar__dropdown visible-lg">
+		<?=svg('back')?><span>Назад в раздел</span>
+	</a>
+<?$this->EndViewTarget();?>

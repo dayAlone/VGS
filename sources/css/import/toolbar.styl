@@ -28,12 +28,16 @@
         br
             @media (min-width: scr_md)
                 display none
+        .back ~ & ^[0]__link
+            margin 0 8px
     &__nav
         margin-left auto
         @media (min-width: 550px)
             margin-left 25px
         @media (min-width: scr_md)
             margin-left 40px
+            .back ~ &
+                margin-left 35px
         &-close
             position absolute
             right 0
@@ -53,6 +57,7 @@
         margin 0 13px
         white-space: nowrap
         @extend .page__hide-with-menu
+
         &:hover
             color orange
     &__logo
@@ -75,7 +80,7 @@
     &__dropdown
         position absolute
         left calc(50% + 60px)
-        top 16px
+        top 17px
         z-index: 20
         @extend .page__hide-with-menu
     &--black
