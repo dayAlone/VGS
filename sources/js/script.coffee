@@ -131,7 +131,7 @@ $(document).ready ->
 	initMap()
 
 	$('.toolbar__nav, .toolbar__nav-close, .nav__close').on 'click', (e)->
-		$('.page').mod 'popup', !$('.page').hasMod 'open'
+		$('.page').mod 'open', !$('.page').hasMod 'open'
 		e.preventDefault()
 
 	$('.modal').on 'shown.bs.modal', (e)->

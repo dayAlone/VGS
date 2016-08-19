@@ -162,7 +162,7 @@
     initGalleries();
     initMap();
     $('.toolbar__nav, .toolbar__nav-close, .nav__close').on('click', function(e) {
-      $('.page').mod('popup', !$('.page').hasMod('open'));
+      $('.page').mod('open', !$('.page').hasMod('open'));
       return e.preventDefault();
     });
     $('.modal').on('shown.bs.modal', function(e) {
