@@ -2989,6 +2989,7 @@ a.gallery__item:hover {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   display: block;
+  padding-right: 20px;
 }
 @media (min-width: 505px) {
   .contacts .contact span {

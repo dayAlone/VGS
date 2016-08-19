@@ -131,15 +131,15 @@ $(document).ready ->
 	initMap()
 
 	$('.toolbar__nav, .toolbar__nav-close, .nav__close').on 'click', (e)->
-		$('.page').mod 'open', !$('.page').hasMod 'open'
+		$('.page').mod 'popup', !$('.page').hasMod 'open'
 		e.preventDefault()
 
 	$('.modal').on 'shown.bs.modal', (e)->
 		getCaptcha()
-		$('.page').mod 'open', !$('.page').hasMod 'open'
+		$('.page').mod 'popup', !$('.page').hasMod 'open'
 
 	$('.modal').on 'hidden.bs.modal', (e)->
-		$('.page').mod 'open', !$('.page').hasMod 'open'
+		$('.page').mod 'popup', !$('.page').hasMod 'open'
 
 	$('.map__close').click (e)->
 		$('.map').mod 'active', false

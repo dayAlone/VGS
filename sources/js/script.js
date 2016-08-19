@@ -162,15 +162,15 @@
     initGalleries();
     initMap();
     $('.toolbar__nav, .toolbar__nav-close, .nav__close').on('click', function(e) {
-      $('.page').mod('open', !$('.page').hasMod('open'));
+      $('.page').mod('popup', !$('.page').hasMod('open'));
       return e.preventDefault();
     });
     $('.modal').on('shown.bs.modal', function(e) {
       getCaptcha();
-      return $('.page').mod('open', !$('.page').hasMod('open'));
+      return $('.page').mod('popup', !$('.page').hasMod('open'));
     });
     $('.modal').on('hidden.bs.modal', function(e) {
-      return $('.page').mod('open', !$('.page').hasMod('open'));
+      return $('.page').mod('popup', !$('.page').hasMod('open'));
     });
     $('.map__close').click(function(e) {
       $('.map').mod('active', false);
