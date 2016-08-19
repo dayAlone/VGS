@@ -19,7 +19,7 @@ elseif (isset($_REQUEST['SECTION_CODE'])):
   $APPLICATION->IncludeComponent("bitrix:news.list", "catalog",
   	array(
   		"IBLOCK_ID"            => 2,
-  		"NEWS_COUNT"           => "20",
+  		"NEWS_COUNT"           => "60",
   		"SORT_BY1"             => "ACTIVE_FROM",
   		"SORT_ORDER1"          => "DESC",
   		"DETAIL_URL"           => "/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
