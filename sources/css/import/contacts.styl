@@ -22,8 +22,9 @@
                 flex-basis: (100/3)%
         &__types, &
             display: flex
-            align-items: center
-            justify-content: space-between
+            @media (min-width: scr_xs)
+                align-items: center
+                justify-content: space-between
             @media (max-width: scr_xs)
                 justify-content: flex-start
                 flex-direction: column
