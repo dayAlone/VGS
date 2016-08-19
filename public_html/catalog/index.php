@@ -13,7 +13,7 @@ if (isset($_REQUEST['ELEMENT_CODE']) || (isset($_REQUEST['SECTION_CODE']) && !$_
       "IBLOCK_TYPE"   => "content_ru",
       "SET_TITLE"     => "Y",
       "CACHE_TYPE"    => "A",
-      "PROPERTY_CODE" => array("GALLERY", "FILES"),
+      "PROPERTY_CODE" => array("GALLERY", "FILES", 'TITLE'),
     ));
 elseif (isset($_REQUEST['SECTION_CODE'])):
   $APPLICATION->IncludeComponent("bitrix:news.list", "catalog",

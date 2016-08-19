@@ -54,6 +54,9 @@ if(count($item["PROPS"]["GALLERY"]) > 0) {
 	$isGallery = true;
 	$showFooter = true;
 }
+
+$APPLICATION->SetPageProperty('page_title', $item['PROPERTIES']['TITLE']);
+
 $this->SetViewTarget('page_footer');
 	if($showFooter):
 	?>
