@@ -1,4 +1,13 @@
-<? $this->setFrameMode(true);?>
+<? $this->setFrameMode(true);
+$s = end($arResult['SECTION']['PATH']);
+?>
+<?if(strlen($s['DESCRIPTION']) > 0):?>
+<p>
+	<?=$s['~DESCRIPTION']?>
+</p>
+<br/>
+<?endif;?>
+
 <?if(count($arResult['ITEMS'])>0):?>
 <div class="equipments">
 
@@ -7,7 +16,11 @@
 		<div style="background-image:url(<?=$item['PREVIEW_PICTURE']['SRC']?>)" class="equipments__photo"></div>
 		<div class="equipments__name"><?=$item['NAME']?></div>
 	</a>
-<?endforeach;?>
+	<?
+	if ($item['PROPERTIES']['DIVIDER']['VALUE_XML_ID']):?>
+		<div class="equipments__divider"></div>
+	<?endif;
+endforeach;?>
 </div>
 <? else:?>
 <div class='text'>
@@ -16,3 +29,10 @@
 <?endif;?>
 
 <?=$arResult["NAV_STRING"]?>
+
+<?
+$this->SetViewTarget('toolbar');?>
+	<a href="/catalog/" class="back toolbar__dropdown visible-lg">
+		<?=svg('back')?><span>Назад в раздел</span>
+	</a>
+<?$this->EndViewTarget();?>

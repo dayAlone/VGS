@@ -27,6 +27,7 @@ elseif (isset($_REQUEST['SECTION_CODE'])):
   		"SET_TITLE"            => "N",
   		"SHOW_DESCRIPTION"     => "Y",
   		"DISPLAY_BOTTOM_PAGER" => "Y",
+        "PROPERTY_CODE" => array("DIVIDER"),
   		"PARENT_SECTION_CODE"  => $_REQUEST['SECTION_CODE'],
   	)
 	);

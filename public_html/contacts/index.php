@@ -16,6 +16,21 @@ $APPLICATION->SetPageProperty('body_class', 'page--contacts');
   <h5>e-mail:</h5>
   <p> <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email')?>" class="text__link"><?=COption::GetOptionString("grain.customsettings", 'email')?></a></p>
   <a href="#Feedback" data-toggle="modal" class="button">Отправить сообщение</a>
+  <h2><br>СПИСОК КОНТАКТОВ</h2>
+  <?
+      $APPLICATION->IncludeComponent("bitrix:news.list", "contacts",
+          array(
+              "IBLOCK_ID"            => "8",
+              "NEWS_COUNT"           => "1000000",
+              "SORT_BY1"             => "SORT",
+              "SORT_ORDER1"          => "ASC",
+              "CACHE_TYPE"           => "A",
+              'PROPERTY_CODE'        => array('NAME', 'EMAIL', 'PHONE'),
+              "SET_TITLE"            => "N"
+          ),
+          false
+      );
+  ?>
 </div>
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');

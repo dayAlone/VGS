@@ -83,7 +83,7 @@ function r_date($date = '', $showday = true) {
 		endif;
 }
 
-function IBlockElementsMenu($IBLOCK_ID)
+function IBlockElementsMenu($IBLOCK_ID, $arFilter = array())
 {
 	$obCache       = new CPHPCache();
 	$cacheLifetime = 86400;
@@ -100,7 +100,7 @@ function IBlockElementsMenu($IBLOCK_ID)
 
 		$arNav    = array();
 		$arSort   = array("NAME" => "DESC");
-		$arFilter = array("IBLOCK_ID" => $IBLOCK_ID, 'ACTIVE'=>'Y');
+		$arFilter = array_merge($arFilter, array("IBLOCK_ID" => $IBLOCK_ID, 'ACTIVE'=>'Y'));
 		$rs       = CIBlockElement::GetList($arSort, $arFilter, false, false);
 		//$rs->SetUrlTemplates("/catalog/#SECTION_CODE#/#ELEMENT_CODE#.php");
 		while ($item = $rs->GetNext()):
