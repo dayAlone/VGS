@@ -6426,9 +6426,6 @@ a.gallery__item:hover {
   width: 100%;
 }
 .contacts .contact span {
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
   display: block;
   padding-right: 20px;
 }
