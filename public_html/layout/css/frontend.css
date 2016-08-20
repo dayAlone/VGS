@@ -3543,7 +3543,7 @@ img.text__image--smallest {
 }
 @media (min-width: scr_sm) {
   img.text__image--smallest {
-    max-width: 18%;
+    max-width: 22%;
   }
 }
 img.text__image--right {
@@ -7035,7 +7035,7 @@ img.text__image--smallest {
 }
 @media (min-width: 768px) {
   img.text__image--smallest {
-    max-width: 18%;
+    max-width: 22%;
   }
 }
 img.text__image--right {
