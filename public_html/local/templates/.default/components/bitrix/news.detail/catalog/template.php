@@ -32,8 +32,10 @@ function getTable($item, $prop) {
 }
 ?>
 <div class="text">
-	<?if(strlen($item["DETAIL_PICTURE"]['SRC']) > 0):?>
-		<img src="<?=$item["DETAIL_PICTURE"]['SRC']?>" class="text__image text__image--right text__image--medium">
+	<?if(strlen($item["DETAIL_PICTURE"]['SRC']) > 0):
+		$img = $item["DETAIL_PICTURE"];
+		?>
+		<img src="<?=$img['SRC']?>" class="text__image text__image--right <?=($img['WIDTH'] < ($img['HEIGHT'] / 1.5) ? 'text__image--smallest' : 'text__image--medium')?>">
 	<?endif;?>
 	<?=$item["~DETAIL_TEXT"]?>
 	<?=getTable($item, 'CONTENT_TABLE');?>

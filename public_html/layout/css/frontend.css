@@ -3538,6 +3538,9 @@ rgba(255,165,0,0.4)
     max-width: 35%;
   }
 }
+img.text__image--smallest {
+  max-width: 20%;
+}
 img.text__image--right {
   clear: both;
   margin-left: 20px;
@@ -7021,6 +7024,9 @@ p a.text__link:hover:hover {
   img.text__image--small {
     max-width: 35%;
   }
+}
+img.text__image--smallest {
+  max-width: 20%;
 }
 img.text__image--right {
   clear: both;
