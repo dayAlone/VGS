@@ -295,3 +295,38 @@
     &--popup
         position fixed
         width 100%
+
+    .download
+        color white
+        display: flex
+        align-items: center
+        position relative
+        font-size 16px
+        text-transform none
+        margin 25px 0 10px
+        @media (min-width: scr_xs)
+            font-size 16px !important
+        &--margin
+            margin: 10px 0 20px
+            @media (min-width: scr_xs)
+                top -30px
+        span
+            border-line(alpha(white, .5))
+            line-height 1
+        svg
+            position relative
+            min-width: 20px
+            top -2px
+            margin-right 10px
+            path
+                fill white
+        &--orange
+            color orange
+            align-self: center
+            @media (min-width: scr_xs)
+                align-self: flex-start
+            span
+                border-line(alpha(orange, .5))
+            svg
+                path
+                    fill orange

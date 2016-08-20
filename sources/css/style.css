@@ -1699,6 +1699,78 @@ a:hover {
   position: fixed;
   width: 100%;
 }
+.page .download {
+  color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  text-transform: none;
+  margin: 25px 0 10px;
+}
+@media (min-width: 505px) {
+  .page .download {
+    font-size: 16px !important;
+  }
+}
+.page .download--margin {
+  margin: 10px 0 20px;
+}
+@media (min-width: 505px) {
+  .page .download--margin {
+    top: -30px;
+  }
+}
+.page .download span {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(255,255,255,0.5) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 100%;
+  line-height: 1;
+}
+.page .download span:hover {
+  text-decoration: none;
+}
+.page .download svg {
+  position: relative;
+  min-width: 20px;
+  top: -2px;
+  margin-right: 10px;
+}
+.page .download svg path {
+  fill: #fff;
+}
+.page .download--orange {
+  color: #f09929;
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+}
+@media (min-width: 505px) {
+  .page .download--orange {
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+    -ms-flex-item-align: start;
+  }
+}
+.page .download--orange span {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(240,153,41,0.5) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 100%;
+}
+.page .download--orange span:hover {
+  text-decoration: none;
+}
+.page .download--orange svg path {
+  fill: #f09929;
+}
 .parsley-errors-list {
   display: none;
 }
