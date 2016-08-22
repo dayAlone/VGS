@@ -34,11 +34,11 @@
     <a href="/" class="toolbar__logo">
       <?=svg('logo')?>
     </a>
-    <div class="toolbar__lang language">
+    <?/*<div class="toolbar__lang language">
       <a href="/" class="language__link language__link--ru <?=LANGUAGE_ID == 'ru' ? 'language__link--active' : '' ?>">RU</a>
       <a href="/en/" class="language__link language__link--en" <?=LANGUAGE_ID == 'en' ? 'language__link--active' : '' ?>>EN</a>
       <span class="language__line"></span>
-    </div>
+    </div>*/?>
     <? $APPLICATION->ShowViewContent('toolbar'); ?>
     <div class="toolbar__contacts">
       <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email')?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'email')?></a>
