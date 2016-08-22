@@ -16,7 +16,7 @@ $s = end($arResult['SECTION']['PATH']);
 <?
 $s = end($arResult['SECTION']['PATH']);
 $this->SetViewTarget('toolbar');?>
-	<a href="/catalog/<?=strlen($s['CODE']) > 0 ? $s['CODE'].'/' : ''?>" class="back toolbar__dropdown visible-lg">
+	<a href="/services/<?=strlen($s['CODE']) > 0 ? $s['CODE'].'/' : ''?>" class="back toolbar__dropdown visible-lg">
 		<?=svg('back')?><span>Назад в раздел</span>
 	</a>
 <?$this->EndViewTarget();?>
