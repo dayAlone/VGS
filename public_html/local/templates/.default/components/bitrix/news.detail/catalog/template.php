@@ -40,6 +40,7 @@ function getTable($item, $prop) {
 	<?=$item["~DETAIL_TEXT"]?>
 	<?=getTable($item, 'CONTENT_TABLE');?>
 	<?=html_entity_decode($item['PROPERTIES']['CONTENT_TABLE_AFTER']['VALUE']['TEXT'])?>
+	<br/><br/>
 	<a href='<?=COption::GetOptionString("grain.customsettings", 'catalog')?>' class='download download--margin  download--orange'><?=svg('pdf')?><span>Скачать каталог</span></a>
 </div>
 <?
