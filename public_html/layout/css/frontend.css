@@ -4881,7 +4881,7 @@ a:hover {
 }
 @media (min-width: 1200px) {
   .page__bg {
-    background-position: top left;
+    background-position: top center;
     width: 50%;
     height: 100%;
   }
@@ -8006,10 +8006,15 @@ a.news__back svg path {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  padding: 13px 0 10px;
+  padding: 7px 0 5px;
   font-weight: 300;
   font-size: 95%;
   min-width: 700px;
+  line-height: 1;
+  font-size: 14px;
+}
+.param__col {
+  padding-right: 10px;
 }
 .param--title {
   border-bottom: 2px solid rgba(0,0,0,0.5);
