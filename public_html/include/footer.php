@@ -32,7 +32,7 @@
     <div class="radia__logo"><?=svg('radia')?></div>
     <div class="radia__text">Разработка сайта<br/>RADIA Interactive</div></a>
 </div>
-<div class="page__bg" <? if (strlen($_GLOBALS['BG_IMAGE']) > 0): ?>style="background-image:url(<?=$_GLOBALS['BG_IMAGE']?>); <?=strlen($_GLOBALS['BG_POSITION'])> 0 ? $_GLOBALS['BG_POSITION'] : ''?>"<?endif;?>></div>
+<div class="page__bg" <? if (strlen($_GLOBALS['BG_IMAGE']) > 0): ?>style="background-image:url(<?=$_GLOBALS['BG_IMAGE']?>); <?=strlen($_GLOBALS['BG_POSITION'])> 0 ? 'background-position: '.$_GLOBALS['BG_POSITION'] : ''?>"<?endif;?>></div>
 
 <div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
   <div class="pswp__bg"></div>
