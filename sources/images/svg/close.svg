@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.5.1 (25234) - http://www.bohemiancoding.com/sketch -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="115px" height="115px" viewBox="0 0 115 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
     <title>close</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M15.56822,19.81178 L0.012,35.368 L4.256,39.612 L19.81228,24.05572 L35.369,39.612 L39.612,35.368 L24.056,19.812 L39.612,4.256 L35.368,0.012 L19.812,15.568 L4.256,0.012 L0.012,4.256 L15.56822,19.81178 Z" id="close" fill="#020797" sketch:type="MSShapeGroup"></path>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M57.5,0 C89.2563731,3.10862447e-15 115,25.7436269 115,57.5 C115,89.2563731 89.2563731,115 57.5,115 C25.7436269,115 5.32907052e-15,89.2563731 1.33226763e-15,57.5 C-2.66453526e-15,25.7436269 25.7436269,7.10542736e-15 57.5,1.33226763e-15 L57.5,0 Z M63.5085,57.6875 L81.908,76.087 L76.246,81.747 L57.8475,63.3485 L39.449,81.747 L33.788,76.087 L52.1867833,57.6877833 L33.788,39.289 L39.449,33.628 L57.8477167,52.0267167 L76.246,33.628 L81.907,39.289 L63.5085,57.6875 Z M57.425,9.167 C83.8932466,9.167 105.35,30.6237534 105.35,57.092 C105.35,83.5602466 83.8932466,105.017 57.425,105.017 C30.9567534,105.017 9.5,83.5602466 9.5,57.092 C9.5,30.6237534 30.9567534,9.167 57.425,9.167 L57.425,9.167 Z" id="close" fill="#000000"></path>
     </g>
 </svg>
