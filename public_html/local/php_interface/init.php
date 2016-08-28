@@ -121,7 +121,7 @@ function IBlockElementsMenu($IBLOCK_ID, $arFilter = array())
 if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 	$obCache       = new CPHPCache();
 	$cacheLifetime = 86400;
-	$cacheID       = 'BG_IMAG2E_'.md5($APPLICATION->GetCurDir());
+	$cacheID       = 'BG_IMAGe_'.md5($APPLICATION->GetCurDir());
 	$cachePath     = '/';
 	if( $obCache->InitCache($cacheLifetime, $cacheID, $cachePath) ):
 	   $vars = $obCache->GetVars();
@@ -145,7 +145,7 @@ if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 		while($ob = $res->Fetch()) {
 			if(strlen($APPLICATION->GetCurDir())>=strlen($ob["PROPERTY_PAGE_VALUE"])) {
 				$_GLOBALS['BG_IMAGE'] = CFile::GetPath($ob['PREVIEW_PICTURE']);
-				$_GLOBALS['BG_POSITION'] = CFile::GetPath($ob['PROPERTY_POSITION_VALUE']);
+				$_GLOBALS['BG_POSITION'] = $ob['PROPERTY_POSITION_VALUE'];
 			}
 		}
 
