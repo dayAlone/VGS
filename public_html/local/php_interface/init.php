@@ -121,15 +121,16 @@ function IBlockElementsMenu($IBLOCK_ID, $arFilter = array())
 if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 	$obCache       = new CPHPCache();
 	$cacheLifetime = 86400;
-	$cacheID       = 'BG_IMAGE_'.md5($APPLICATION->GetCurDir());
+	$cacheID       = 'BG_IMAG2E_'.md5($APPLICATION->GetCurDir());
 	$cachePath     = '/';
 	if( $obCache->InitCache($cacheLifetime, $cacheID, $cachePath) ):
 	   $vars = $obCache->GetVars();
 	   $_GLOBALS['BG_IMAGE'] = $vars['BG_IMAGE'];
+	   $_GLOBALS['BG_POSITION'] = $vars['BG_POSITION'];
 	elseif( $obCache->StartDataCache() ):
 		CModule::IncludeModule("iblock");
 
-		$arSelect = Array("ID", "PREVIEW_PICTURE", "PROPERTY_PAGE");
+		$arSelect = Array("ID", "PREVIEW_PICTURE", "PROPERTY_PAGE", "PROPERTY_POSITION");
 		$path     = preg_split('/\//', $APPLICATION->GetCurDir(), false, PREG_SPLIT_NO_EMPTY);
 		$urls     = array();
 		for ($i=0; $i < count($path); $i++)
@@ -141,13 +142,16 @@ if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 		global $CACHE_MANAGER;
 		$CACHE_MANAGER->StartTagCache($cachePath);
 
-		while($ob = $res->Fetch())
-			if(strlen($APPLICATION->GetCurDir())>=strlen($ob["PROPERTY_PAGE_VALUE"]))
+		while($ob = $res->Fetch()) {
+			if(strlen($APPLICATION->GetCurDir())>=strlen($ob["PROPERTY_PAGE_VALUE"])) {
 				$_GLOBALS['BG_IMAGE'] = CFile::GetPath($ob['PREVIEW_PICTURE']);
+				$_GLOBALS['BG_POSITION'] = CFile::GetPath($ob['PROPERTY_POSITION_VALUE']);
+			}
+		}
 
 		$CACHE_MANAGER->RegisterTag($cacheID);
 		$CACHE_MANAGER->EndTagCache();
-		$obCache->EndDataCache(array('BG_IMAGE' => $_GLOBALS['BG_IMAGE']));
+		$obCache->EndDataCache(array('BG_IMAGE' => $_GLOBALS['BG_IMAGE'], 'BG_POSITION' => $_GLOBALS['BG_POSITION']));
 	endif;
 
 endif;
