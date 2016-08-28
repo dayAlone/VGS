@@ -4864,7 +4864,7 @@ a:hover {
   background-color: #121933;
   z-index: 10;
   background-size: cover;
-  background-position: top left;
+  background-position: top center;
   -webkit-filter: blur(0px);
   filter: blur(0px);
   transition: 0.3s -webkit-filter, 0.3s filter;
@@ -4881,6 +4881,7 @@ a:hover {
 }
 @media (min-width: 1200px) {
   .page__bg {
+    background-position: top left;
     width: 50%;
     height: 100%;
   }
