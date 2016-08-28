@@ -4312,7 +4312,7 @@ a.news__back svg path {
 .footer--dark .footer__radia {
   color: rgba(255,255,255,0.5);
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .footer--dark .footer__radia {
     display: -webkit-flex;
     display: -ms-flexbox;
