@@ -1,12 +1,15 @@
 .licenses
-    display: flex
-    flex-wrap: wrap
-    justify-content: flex-start
-    margin-right -10px
-    margin-left -10px
-    @media (min-width: scr_sm)
-        margin-right -20px
-        margin-left -20px
+    &__items
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+        margin-right -10px
+        margin-left -10px
+        max-height: 1px
+        overflow hidden
+        @media (min-width: scr_sm)
+            margin-right -20px
+            margin-left -20px
     &__image
         width 100%
         margin-bottom 25px
@@ -43,6 +46,61 @@
             & ^[0]__image:after
                 border-color: orange
 
-    &__title
+    &__name
         font-size 11px
         font-weight 400
+    &__title
+        width: 100%
+        display flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 4px solid orange
+        color black
+        text-transform uppercase
+        font-weight bold
+
+        padding-bottom 10px
+        margin-bottom 20px
+        font-family 'GothamPro'
+        cursor pointer
+        line-height 1.1
+        font-size 17px
+        @media (min-width: scr_sm)
+            font-size 20px
+        svg
+            transition: .3s transform
+            position relative
+            top 2px
+            min-width: 30px
+            margin-left 10px
+        &:hover
+            color orange
+            svg
+                path
+                    fill orange
+    &__section
+        & + &
+            margin-top 5px
+
+        &--open
+            & ^[0]__items
+                max-height: none
+                padding-bottom 20px
+            & ^[0]__title svg
+                transform: rotate(180deg)
+    &__description
+        flex-basis: 100%
+        margin-bottom 15px
+        margin-top 10px
+        padding: 0 10px
+        font-size 14px
+        @media (min-width: scr_sm)
+            padding: 0 20px
+            font-size 17px
+        a
+            background transparent
+            color orange
+            border-line(alpha(orange,.4))
+            &:hover
+                border-line(alpha(orange,.4))
+                color orange

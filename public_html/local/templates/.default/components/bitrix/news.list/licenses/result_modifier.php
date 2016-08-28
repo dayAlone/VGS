@@ -14,4 +14,17 @@ foreach ($arResult['ITEMS'] as &$item)
 	foreach ($item['PROPERTIES']['IMAGES']['VALUE'] as &$img)
 		$img = array_merge($arResult['IMAGES'][$img], array('title'=>$item['OLD_NAME']));
 
+
+$sections = array();
+
+foreach ($arResult['ITEMS'] as &$item):
+	if (!$sections[$item['IBLOCK_SECTION_ID']]) {
+		$res = CIBlockSection::GetByID($item['IBLOCK_SECTION_ID']);
+		$ar_res = $res->Fetch();
+		$sections[$item['IBLOCK_SECTION_ID']] = array_merge($ar_res, array('ITEMS' => array()));
+	}
+	$sections[$item['IBLOCK_SECTION_ID']]['ITEMS'][] = $item;
+endforeach;
+
+$arResult['ITEMS'] = $sections;
 ?>

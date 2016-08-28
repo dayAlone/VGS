@@ -212,6 +212,11 @@
         }
       });
     });
+    $('.licenses').elem('title').on('click', function(e) {
+      $(this).parents('.licenses__section').mod('open', !$(this).parents('.licenses__section').hasMod('open'));
+      calculateLayout();
+      return e.preventDefault();
+    });
     return delay(300, function() {
       return calculateLayout();
     });

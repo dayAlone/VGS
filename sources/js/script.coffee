@@ -178,5 +178,10 @@ $(document).ready ->
 	        		$('input[name=captcha_word]').addClass('parsley-error')
 	        		getCaptcha()
 
+	$('.licenses').elem('title').on 'click', (e)->
+		$(this).parents('.licenses__section').mod 'open', !$(this).parents('.licenses__section').hasMod 'open'
+		calculateLayout()
+		e.preventDefault()
+
 	delay 300, ->
 	  calculateLayout()
