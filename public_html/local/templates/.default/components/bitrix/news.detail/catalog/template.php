@@ -34,8 +34,11 @@ function getTable($item, $prop) {
 <div class="text">
 	<?if(strlen($item["DETAIL_PICTURE"]['SRC']) > 0):
 		$img = $item["DETAIL_PICTURE"];
+		$json = array(array("src"=>$img['SRC'], "w"=>$img['WIDTH'],"h"=>$img['HEIGHT']));
 		?>
-		<img src="<?=$img['SRC']?>" class="text__image text__image--right <?=($img['WIDTH'] < ($img['HEIGHT'] / 1.5) ? 'text__image--smallest' : 'text__image--medium')?>">
+		<a href="#" class="text__image text__gallery text__image--right <?=($img['WIDTH'] < ($img['HEIGHT'] / 1.5) ? 'text__image--smallest' : 'text__image--medium')?>" data-pictures='<?=json_encode($json)?>'>
+        	<img src="<?=$img['SRC']?>" class="text__image">
+		</a>
 	<?endif;?>
 	<?=$item["~DETAIL_TEXT"]?>
 	<?=getTable($item, 'CONTENT_TABLE');?>

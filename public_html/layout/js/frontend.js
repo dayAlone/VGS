@@ -31354,7 +31354,7 @@ return PhotoSwipeUI_Default;
   };
 
   this.initGalleries = function() {
-    return $('.licenses__item, .album, .gallery__item, .button--gallery').click(function(e) {
+    return $('.licenses__item, .album, .gallery__item, .button--gallery, .text__gallery').click(function(e) {
       var elem, gallery, items, options;
       e.preventDefault();
       elem = $('.pswp')[0];

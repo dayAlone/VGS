@@ -3529,32 +3529,60 @@ rgba(255,165,0,0.4)
   margin-bottom: 25px;
 }
 @media (min-width: scr_sm) {
-  img.text__image--medium {
+  img.text__image--medium,
+  a.text__image--medium {
     max-width: 50%;
   }
 }
 @media (min-width: scr_sm) {
-  img.text__image--small {
+  img.text__image--small,
+  a.text__image--small {
     max-width: 35%;
   }
 }
-img.text__image--smallest {
+img.text__image--smallest,
+a.text__image--smallest {
   max-width: 25%;
 }
 @media (min-width: scr_sm) {
-  img.text__image--smallest {
+  img.text__image--smallest,
+  a.text__image--smallest {
     max-width: 22%;
   }
 }
-img.text__image--right {
+img.text__image--right,
+a.text__image--right {
   clear: both;
   margin-left: 20px;
   float: right;
 }
-img.text__image--left {
+img.text__image--left,
+a.text__image--left {
   clear: both;
   margin-right: 20px;
   float: left;
+}
+.text__gallery {
+  position: relative;
+  display: block;
+  float: right;
+}
+.text__gallery:after {
+  content: "";
+  position: absolute;
+  size: 45px;
+  background: rgba(0,0,0,0.5) url("/layout/images/svg/zoom.svg") center center no-repeat;
+  background-size: 20px auto;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  t: opacity;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+.text__gallery:hover:after {
+  opacity: 1;
 }
 .text__blockquote {
   text-transform: uppercase;
@@ -7093,32 +7121,68 @@ p a.text__link:hover:hover {
   margin-bottom: 25px;
 }
 @media (min-width: 768px) {
-  img.text__image--medium {
+  img.text__image--medium,
+  a.text__image--medium {
     max-width: 50%;
   }
 }
 @media (min-width: 768px) {
-  img.text__image--small {
+  img.text__image--small,
+  a.text__image--small {
     max-width: 35%;
   }
 }
-img.text__image--smallest {
+img.text__image--smallest,
+a.text__image--smallest {
   max-width: 25%;
 }
 @media (min-width: 768px) {
-  img.text__image--smallest {
+  img.text__image--smallest,
+  a.text__image--smallest {
     max-width: 22%;
   }
 }
-img.text__image--right {
+img.text__image--right,
+a.text__image--right {
   clear: both;
   margin-left: 20px;
   float: right;
 }
-img.text__image--left {
+img.text__image--left,
+a.text__image--left {
   clear: both;
   margin-right: 20px;
   float: left;
+}
+.text__gallery {
+  position: relative;
+  display: block;
+  float: right;
+}
+.text__gallery:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: rgba(0,0,0,0.5) url("/layout/images/svg/zoom.svg") center center no-repeat;
+  background-size: 20px auto;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+.text__gallery:hover:after {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+  filter: none;
 }
 .text__blockquote {
   text-transform: uppercase;
