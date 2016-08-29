@@ -27,4 +27,14 @@ foreach ($arResult['ITEMS'] as &$item):
 endforeach;
 
 $arResult['ITEMS'] = $sections;
+
+
+if (!function_exists('sec_sort')) {
+  function years_sort($a, $b)
+  {
+      return ($a['SORT'] >= $b['SORT']) ? -1 : 1;
+  }
+}
+uasort($arResult['ITEMS'], "sec_sort");
+
 ?>
