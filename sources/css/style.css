@@ -1517,6 +1517,7 @@ a:hover {
 }
 .page--index .page__bg {
   background-image: url("/layout/images/bg.index.jpg");
+  width: 100%;
   height: 100%;
 }
 .page--index .page__bg:after {
