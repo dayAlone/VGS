@@ -17,12 +17,13 @@ foreach ($arResult['ITEMS'] as &$item)
 
 $sections = array();
 
+$arFilter = array('IBLOCK_ID' => $arResult['ID']);
+$rsSections = CIBlockSection::GetList(array('LEFT_MARGIN' => 'ASC'), $arFilter);
+while ($arSection = $rsSections->Fetch()) {
+	$sections[$arSection['ID']] = $arSection;
+}
+
 foreach ($arResult['ITEMS'] as &$item):
-	if (!$sections[$item['IBLOCK_SECTION_ID']]) {
-		$res = CIBlockSection::GetByID($item['IBLOCK_SECTION_ID']);
-		$ar_res = $res->Fetch();
-		$sections[$item['IBLOCK_SECTION_ID']] = array_merge($ar_res, array('ITEMS' => array()));
-	}
 	$sections[$item['IBLOCK_SECTION_ID']]['ITEMS'][] = $item;
 endforeach;
 
