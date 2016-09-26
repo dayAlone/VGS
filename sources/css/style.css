@@ -1099,6 +1099,15 @@ a:hover {
   border-radius: 0;
   background-color: #f09929 !important;
 }
+.pswp__caption__center {
+  max-width: none;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .pswp__caption__center {
+    font-size: 19px;
+  }
+}
 .noUi-horizontal.noUi-target {
   position: relative;
   z-index: 20;
