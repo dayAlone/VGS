@@ -37,6 +37,6 @@ endforeach;?>
 <?
 $this->SetViewTarget('toolbar');?>
 	<a href="/catalog/" class="back toolbar__dropdown visible-lg">
-		<?=svg('back')?><span>Назад в раздел</span>
+		<?=svg('back')?><span><?=Loc::getMessage('BACK')?></span>
 	</a>
 <?$this->EndViewTarget();?>
