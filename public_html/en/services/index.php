@@ -7,7 +7,7 @@ if (isset($_REQUEST['ELEMENT_CODE'])):
       "IBLOCK_ID"     => 13,
       "ELEMENT_CODE"  => $_REQUEST['ELEMENT_CODE'],
       "CHECK_DATES"   => "N",
-      "IBLOCK_TYPE"   => "content_ru",
+      "IBLOCK_TYPE"   => "content_en",
       "SET_TITLE"     => "Y",
       "PROPERTY_CODE" => Array("GALLERY"),
       "CACHE_TYPE"    => "A",

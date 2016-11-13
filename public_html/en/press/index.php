@@ -28,7 +28,7 @@ else:
     "IBLOCK_ID"     => 12,
     "ELEMENT_CODE"  => $_REQUEST['SECTION_CODE'],
     "CHECK_DATES"   => "N",
-    "IBLOCK_TYPE"   => "content_ru",
+    "IBLOCK_TYPE"   => "content_en",
     "SET_TITLE"     => "Y",
     "CACHE_TYPE"    => "A",
     "PROPERTY_CODE" => array("GALLERY"),
