@@ -22,7 +22,7 @@ elseif (isset($_REQUEST['SECTION_CODE'])):
         "NEWS_COUNT"           => "60",
         "SORT_BY1"             => "ACTIVE_FROM",
         "SORT_ORDER1"          => "DESC",
-        "DETAIL_URL"           => "/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
+        "DETAIL_URL"           => "/en/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
         "CACHE_TYPE"           => "A",
         "SET_TITLE"            => "N",
         "SHOW_DESCRIPTION"     => "Y",

@@ -13,7 +13,7 @@ if(intval($_GLOBALS['currentSection']) > 0):
   		"NEWS_COUNT"           => "20",
   		"SORT_BY1"             => "ACTIVE_FROM",
   		"SORT_ORDER1"          => "DESC",
-  		"DETAIL_URL"           => "/press/#ELEMENT_CODE#/",
+  		"DETAIL_URL"           => "/en/press/#ELEMENT_CODE#/",
   		"CACHE_TYPE"           => "A",
   		"SET_TITLE"            => "N",
   		"SHOW_DESCRIPTION"     => "Y",
