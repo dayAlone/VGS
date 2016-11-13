@@ -46,7 +46,7 @@
       <a href="tel:+73478320580" class="toolbar__link">+7 (34783) 2-05-80</a>
     </div>
     <a href="#" class="toolbar__nav nav">
-      <div class="nav__text">Меню</div>
+      <div class="nav__text"><?=LANGUAGE_ID == 'en' ? 'Menu' : 'Меню' ?></div>
       <div class="nav__icon">
         <?=svg('menu')?>
       </div>

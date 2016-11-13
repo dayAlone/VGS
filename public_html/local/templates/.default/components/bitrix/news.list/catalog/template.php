@@ -1,4 +1,8 @@
-<? $this->setFrameMode(true);
+<?
+$this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
+use Bitrix\Sale\Location;
+Loc::loadMessages(__FILE__);
 $s = end($arResult['SECTION']['PATH']);
 ?>
 <?if(strlen($s['DESCRIPTION']) > 0):?>
