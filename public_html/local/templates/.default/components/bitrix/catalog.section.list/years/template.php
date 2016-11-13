@@ -4,7 +4,7 @@ if(count($arResult['SECTIONS'])>1):?>
 <div class="dropdown <?=$arParams['CLASS']?>">
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):
 		if($arParams["CACHE_NOTES"] == $item['ID']):?>
-		<a href="#" class="dropdown__trigger"><span class="dropdown__text dropdown__text--white"><?=$item['NAME']?></span><?=svg('down')?></a>
+		<a href="#" class="dropdown__trigger"><span class="dropdown__text dropdown__text--white"><?=$item['NAME']?></span></a>
 		<?endif;
 	endforeach;?>
 	<span class="dropdown__frame">
