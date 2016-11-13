@@ -29,7 +29,7 @@ false);
         <?endforeach;?>
     </div>
 	<div class="text__divider no-margin-top"></div>
-	<a href="/press/<?=$s['CODE']?>/" class="news__back">
+	<a href="<?=(LANGUAGE_ID === 'en' ? '/en' : '')?>/press/<?=$s['CODE']?>/" class="news__back">
 		<?=svg('back')?><span><?=Loc::getMessage('BACK')?></span>
 	</a>
 </div>

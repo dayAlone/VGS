@@ -111,7 +111,7 @@ $this->SetViewTarget('footer');
 $this->EndViewTarget();
 $s = end($arResult['SECTION']['PATH']);
 $this->SetViewTarget('toolbar');?>
-	<a href="/catalog/<?=strlen($s['CODE']) > 0 ? $s['CODE'].'/' : ''?>" class="back toolbar__dropdown visible-lg">
+	<a href="<?=(LANGUAGE_ID === 'en' ? '/en' : '')?>/catalog/<?=strlen($s['CODE']) > 0 ? $s['CODE'].'/' : ''?>" class="back toolbar__dropdown visible-lg">
 		<?=svg('back')?><span><?=Loc::getMessage('BACK')?></span>
 	</a>
 <?$this->EndViewTarget();?>
