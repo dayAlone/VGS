@@ -15,18 +15,18 @@
   <div class="footer__map"><a href="/sitemap/" class="footer__link">Карта сайта</a><br><br></div>
   <?
     $APPLICATION->IncludeComponent("bitrix:news.list", "certs",
-				array(
-					"IBLOCK_ID"            => "1",
-					"NEWS_COUNT"           => "99",
-					"SORT_BY1"             => "SORT",
-					"SORT_ORDER1"          => "ASC",
-					"CACHE_TYPE"           => "A",
-					'PROPERTY_CODE'        => array('FILE'),
-          'CLASS'                => 'footer__certs certs--small',
-          'SET_TITLE'            => 'N'
-				),
-				false
-			);
+			array(
+				"IBLOCK_ID"            => LANGUAGE_ID === 'ru' ? 1 : 15,
+				"NEWS_COUNT"           => "99",
+				"SORT_BY1"             => "SORT",
+				"SORT_ORDER1"          => "ASC",
+				"CACHE_TYPE"           => "A",
+				'PROPERTY_CODE'        => array('FILE'),
+                'CLASS'                => 'footer__certs certs--small',
+                'SET_TITLE'            => 'N'
+			),
+			false
+		);
   ?>
   <a href="http://radia.ru" target="_blank" class="footer__radia radia">
     <div class="radia__logo"><?=svg('radia')?></div>
