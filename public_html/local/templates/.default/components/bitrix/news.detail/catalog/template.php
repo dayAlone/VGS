@@ -1,6 +1,8 @@
 <?
 $item = $arResult;
-
+use Bitrix\Main\Localization\Loc;
+use Bitrix\Sale\Location;
+Loc::loadMessages(__FILE__);
 function getTable($item, $prop) {
 	ob_start();
 		if (count($item['PROPERTIES'][$prop]['VALUE']) > 0 && strlen($item['PROPERTIES'][$prop]['VALUE'][0]['prop_value_0']) > 0):
@@ -44,7 +46,7 @@ function getTable($item, $prop) {
 	<?=getTable($item, 'CONTENT_TABLE');?>
 	<?=html_entity_decode($item['PROPERTIES']['CONTENT_TABLE_AFTER']['VALUE']['TEXT'])?>
 	<br/><br/>
-	<a href='<?=COption::GetOptionString("grain.customsettings", 'catalog')?>' class='download download--margin  download--orange'><?=svg('pdf')?><span>Скачать каталог</span></a>
+	<a href='<?=COption::GetOptionString("grain.customsettings", 'catalog')?>' class='download download--margin  download--orange'><?=svg('pdf')?><span><?=Loc::getMessage('DOWNLOAD')?></span></a>
 </div>
 <?
 $showFooter = false;
@@ -79,7 +81,7 @@ $this->SetViewTarget('page_footer');
 			<?endif;
 		}?>
 		<? if(count($item["PROPS"]["GALLERY"]) > 0):?>
-			<a href="#" class="button button--gallery button--small" data-pictures='<?=json_encode($item["PROPS"]["GALLERY"])?>'>фотогалерея</a>
+			<a href="#" class="button button--gallery button--small" data-pictures='<?=json_encode($item["PROPS"]["GALLERY"])?>'><?=Loc::getMessage('GALLERY')?></a>
 		<? endif;?>
 
 	</div>
@@ -110,6 +112,6 @@ $this->EndViewTarget();
 $s = end($arResult['SECTION']['PATH']);
 $this->SetViewTarget('toolbar');?>
 	<a href="/catalog/<?=strlen($s['CODE']) > 0 ? $s['CODE'].'/' : ''?>" class="back toolbar__dropdown visible-lg">
-		<?=svg('back')?><span>Назад в раздел</span>
+		<?=svg('back')?><span><?=Loc::getMessage('BACK')?></span>
 	</a>
 <?$this->EndViewTarget();?>

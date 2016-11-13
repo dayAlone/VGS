@@ -1,6 +1,9 @@
 <?
 $item = $arResult;
 $s = end($arResult['SECTION']['PATH']);
+use Bitrix\Main\Localization\Loc;
+use Bitrix\Sale\Location;
+Loc::loadMessages(__FILE__);
 $APPLICATION->IncludeComponent("bitrix:catalog.section.list", "years", array(
     "IBLOCK_TYPE"  => "content",
     "IBLOCK_ID"    => $arParams["IBLOCK_ID"],
@@ -27,7 +30,7 @@ false);
     </div>
 	<div class="text__divider no-margin-top"></div>
 	<a href="/press/<?=$s['CODE']?>/" class="news__back">
-		<?=svg('back')?><span>назад к списку новостей</span>
+		<?=svg('back')?><span><?=Loc::getMessage('BACK')?></span>
 	</a>
 </div>
 
