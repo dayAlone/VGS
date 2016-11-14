@@ -2,7 +2,7 @@
 <?
   $APPLICATION->IncludeComponent("bitrix:news.list", "buttons",
       array(
-        "IBLOCK_ID"      => 11,
+        "IBLOCK_ID"      => LANGUAGE_ID === 'en' ? 11 : 2,
         "NEWS_COUNT"     => "40",
         "SORT_BY1"       => "SECTION_ID",
         "SORT_ORDER1"    => "ASC",
@@ -19,7 +19,7 @@
 <?
   $APPLICATION->IncludeComponent("bitrix:news.list", "certs",
       array(
-        "IBLOCK_ID"            => "15",
+        "IBLOCK_ID"            => LANGUAGE_ID === 'en' ? 15 : 1,
         "NEWS_COUNT"           => "99",
         "SORT_BY1"             => "SORT",
         "SORT_ORDER1"          => "ASC",

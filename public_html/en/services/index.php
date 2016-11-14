@@ -4,7 +4,7 @@ $APPLICATION->SetPageProperty('body_class', 'page--services');
 if (isset($_REQUEST['ELEMENT_CODE'])):
   $APPLICATION->IncludeComponent("bitrix:news.detail", "detail",
     Array(
-      "IBLOCK_ID"     => LANGUAGE_ID === 'en' ? 13 : 2,
+      "IBLOCK_ID"     => 12,
       "ELEMENT_CODE"  => $_REQUEST['ELEMENT_CODE'],
       "CHECK_DATES"   => "N",
       "IBLOCK_TYPE"   => "content_en",
@@ -21,7 +21,7 @@ else:
   $APPLICATION->SetPageProperty('toolbar_class', ' toolbar--white');
   $APPLICATION->IncludeComponent("bitrix:news.list", "buttons",
       array(
-        "IBLOCK_ID"   => LANGUAGE_ID === 'en' ? 10 : 1,
+        "IBLOCK_ID"   => 12,
         "NEWS_COUNT"  => "4",
         "SORT_BY1"    => "SORT",
         "SORT_ORDER1" => "ASC",
