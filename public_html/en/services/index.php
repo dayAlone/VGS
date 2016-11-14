@@ -21,7 +21,7 @@ else:
   $APPLICATION->SetPageProperty('toolbar_class', ' toolbar--white');
   $APPLICATION->IncludeComponent("bitrix:news.list", "buttons",
       array(
-        "IBLOCK_ID"   => LANGUAGE_ID === 'en' ? 13 : 2,
+        "IBLOCK_ID"   => LANGUAGE_ID === 'en' ? 10 : 1,
         "NEWS_COUNT"  => "4",
         "SORT_BY1"    => "SORT",
         "SORT_ORDER1" => "ASC",
